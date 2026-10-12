@@ -1,0 +1,1 @@
+npx skills add saadeghi/daisyui --agent opencode --yes
