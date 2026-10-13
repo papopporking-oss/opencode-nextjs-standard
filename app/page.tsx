@@ -7,6 +7,10 @@ import Profile from "@/components/Profile";
 async function PageAsync() {
   const session = await auth0.getSession();
   const user = session?.user;
+
+  // console.log(session)
+  // console.log(user)
+
   return (
     <main>
       
