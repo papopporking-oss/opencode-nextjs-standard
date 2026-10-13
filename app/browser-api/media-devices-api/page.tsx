@@ -88,33 +88,33 @@ export default function Page() {
   }, []);
 
   return (
-    <main>
-      <h1>MediaDevices API</h1>
-      <div style={{ padding: "12px", border: "1px solid #3498db", borderRadius: "8px", backgroundColor: "#eaf2f8", marginBottom: "16px" }}>
+    <main className="max-w-4xl mx-auto p-8">
+      <h1 className="text-3xl font-bold mb-6">MediaDevices API</h1>
+      <div className="p-3 border border-blue-500 rounded-lg bg-blue-50 mb-4">
         <p>Open DevTools Console to see device enumeration and stream details. Camera permission is required.</p>
       </div>
-      <video ref={videoRef} autoPlay playsInline style={{ width: "100%", maxWidth: "448px", borderRadius: "8px", border: "1px solid #ccc", marginBottom: "16px" }}/>
+      <video className="w-full max-w-lg rounded-lg mt-4" ref={videoRef} autoPlay playsInline/>
       {deviceList.length > 0 && (
-        <table style={{ width: "100%", borderCollapse: "collapse" }}>
-          <thead>
-            <tr style={{ borderBottom: "1px solid #ccc" }}>
-              <th style={{ textAlign: "left", padding: "8px" }}>Kind</th>
-              <th style={{ textAlign: "left", padding: "8px" }}>Label</th>
-              <th style={{ textAlign: "left", padding: "8px" }}>Device ID</th>
+        <table className="w-full text-sm mt-4 border-collapse">
+          <thead className="bg-gray-100">
+            <tr>
+              <th className="border border-gray-300 px-3 py-2 text-left font-medium">Kind</th>
+              <th className="border border-gray-300 px-3 py-2 text-left font-medium">Label</th>
+              <th className="border border-gray-300 px-3 py-2 text-left font-medium">Device ID</th>
             </tr>
           </thead>
           <tbody>
             {deviceList.map((d, i) => (
-              <tr key={i} style={{ borderBottom: "1px solid #eee" }}>
-                <td style={{ padding: "8px" }}>{d.kind}</td>
-                <td style={{ padding: "8px" }}>{d.label}</td>
-                <td style={{ padding: "8px", fontSize: "12px", fontFamily: "monospace" }}>{d.deviceId}</td>
+              <tr key={i}>
+                <td className="border border-gray-300 px-3 py-2 font-mono text-xs">{d.kind}</td>
+                <td className="border border-gray-300 px-3 py-2 font-mono text-xs">{d.label}</td>
+                <td className="border border-gray-300 px-3 py-2 font-mono text-xs">{d.deviceId}</td>
               </tr>
             ))}
           </tbody>
         </table>
       )}
-      <a href="https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices" target="_blank" rel="noopener noreferrer">MDN: MediaDevices API</a>
+      <a className="text-blue-600 hover:underline text-sm mt-4 inline-block" href="https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices" target="_blank" rel="noopener noreferrer">MDN: MediaDevices API</a>
     </main>
   );
 }

@@ -210,25 +210,25 @@ export default function Page() {
   };
 
   return (
-    <main>
-      <h1>URL API</h1>
-      <div style={{ padding: "12px", border: "1px solid #3498db", borderRadius: "8px", backgroundColor: "#eaf2f8", marginBottom: "16px" }}>
+    <main className="max-w-4xl mx-auto p-8">
+      <h1 className="text-3xl font-bold mb-6">URL API</h1>
+      <div className="p-3 border border-blue-500 rounded-lg bg-blue-50 mb-4">
         <p>Open DevTools Console to see URL parsing, construction, and URLSearchParams manipulation.</p>
       </div>
       <div>
-        <div style={{ display: "flex", flexWrap: "wrap", gap: "8px", marginBottom: "12px" }}>
-          <button onClick={parseURL}>Parse URL</button>
-          <button onClick={urlSearchParams}>URLSearchParams</button>
-          <button onClick={constructURL}>Construct URL</button>
-          <button onClick={urlValidation}>Validate URLs</button>
+        <div className="flex flex-wrap gap-2 mb-4">
+          <button className="px-3 py-1.5 rounded text-sm font-medium bg-gray-100 hover:bg-gray-200 border border-gray-300" onClick={parseURL}>Parse URL</button>
+          <button className="px-3 py-1.5 rounded text-sm font-medium bg-gray-100 hover:bg-gray-200 border border-gray-300" onClick={urlSearchParams}>URLSearchParams</button>
+          <button className="px-3 py-1.5 rounded text-sm font-medium bg-gray-100 hover:bg-gray-200 border border-gray-300" onClick={constructURL}>Construct URL</button>
+          <button className="px-3 py-1.5 rounded text-sm font-medium bg-gray-100 hover:bg-gray-200 border border-gray-300" onClick={urlValidation}>Validate URLs</button>
         </div>
         {log.length > 0 && (
-          <pre style={{ backgroundColor: "#1e1e2e", color: "#cdd6f4", padding: "12px", borderRadius: "8px", fontSize: "14px", maxHeight: "260px", overflow: "auto" }}>
+          <pre className="bg-gray-900 text-gray-100 p-3 rounded-lg text-sm max-h-64 overflow-auto mt-3 font-mono">
             {log.map((l, i) => <div key={i}>{l}</div>)}
           </pre>
         )}
       </div>
-      <a href="https://developer.mozilla.org/en-US/docs/Web/API/URL" target="_blank" rel="noopener noreferrer">MDN: URL API</a>
+      <a className="text-blue-600 hover:underline text-sm mt-4 inline-block" href="https://developer.mozilla.org/en-US/docs/Web/API/URL" target="_blank" rel="noopener noreferrer">MDN: URL API</a>
     </main>
   );
 }

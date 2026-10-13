@@ -102,22 +102,22 @@ export default function Page() {
   };
 
   return (
-    <main>
-      <h1>Clipboard API</h1>
-      <div style={{ padding: "12px", border: "1px solid #3498db", borderRadius: "8px", backgroundColor: "#eaf2f8", marginBottom: "16px" }}>
+    <main className="max-w-4xl mx-auto p-8">
+      <h1 className="text-3xl font-bold mb-6">Clipboard API</h1>
+      <div className="p-3 border border-blue-500 rounded-lg bg-blue-50 mb-4">
         <p>Requires secure context (HTTPS or localhost). Open DevTools Console to see results. Paste may require permission.</p>
       </div>
       <div>
-        <div style={{ display: "flex", flexWrap: "wrap", gap: "8px", marginBottom: "16px" }}>
-          <button onClick={handleCopy}>Copy Text</button>
-          <button onClick={handlePaste}>Paste Text</button>
-          <button onClick={handleCopyImage}>Copy Image</button>
-          <button onClick={handleReadClipboardContents}>Read Clipboard</button>
+        <div className="flex flex-wrap gap-2 mb-4">
+          <button className="px-3 py-1.5 rounded text-sm font-medium bg-gray-100 hover:bg-gray-200 border border-gray-300" onClick={handleCopy}>Copy Text</button>
+          <button className="px-3 py-1.5 rounded text-sm font-medium bg-gray-100 hover:bg-gray-200 border border-gray-300" onClick={handlePaste}>Paste Text</button>
+          <button className="px-3 py-1.5 rounded text-sm font-medium bg-gray-100 hover:bg-gray-200 border border-gray-300" onClick={handleCopyImage}>Copy Image</button>
+          <button className="px-3 py-1.5 rounded text-sm font-medium bg-gray-100 hover:bg-gray-200 border border-gray-300" onClick={handleReadClipboardContents}>Read Clipboard</button>
         </div>
-        {copiedText && <pre style={{ backgroundColor: "#1e1e2e", color: "#cdd6f4", padding: "12px", borderRadius: "8px", fontSize: "14px" }}>Copied: {copiedText}</pre>}
-        {pasteText && <pre style={{ backgroundColor: "#1e1e2e", color: "#cdd6f4", padding: "12px", borderRadius: "8px", fontSize: "14px" }}>Pasted: {pasteText}</pre>}
+        {copiedText && <pre className="bg-gray-900 text-gray-100 p-3 rounded-lg text-sm max-h-64 overflow-auto mt-3 font-mono">Copied: {copiedText}</pre>}
+        {pasteText && <pre className="bg-gray-900 text-gray-100 p-3 rounded-lg text-sm max-h-64 overflow-auto mt-3 font-mono">Pasted: {pasteText}</pre>}
       </div>
-      <a href="https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API" target="_blank" rel="noopener noreferrer">MDN: Clipboard API</a>
+      <a className="text-blue-600 hover:underline text-sm mt-4 inline-block" href="https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API" target="_blank" rel="noopener noreferrer">MDN: Clipboard API</a>
     </main>
   );
 }

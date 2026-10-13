@@ -18,3 +18,6 @@ npm i dayjs
 
 # Type validation
 npm i zod
+
+# Auth0
+npm install @auth0/nextjs-auth0

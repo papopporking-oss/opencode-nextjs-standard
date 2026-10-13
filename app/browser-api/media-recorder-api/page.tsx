@@ -193,28 +193,28 @@ export default function Page() {
   };
 
   return (
-    <main>
-      <h1>MediaRecorder API</h1>
-      <div style={{ padding: "12px", border: "1px solid #3498db", borderRadius: "8px", backgroundColor: "#eaf2f8", marginBottom: "16px" }}>
+    <main className="max-w-4xl mx-auto p-8">
+      <h1 className="text-3xl font-bold mb-6">MediaRecorder API</h1>
+      <div className="p-3 border border-blue-500 rounded-lg bg-blue-50 mb-4">
         <p>Requires secure context + microphone permission. Open DevTools Console. Speak into microphone to record.</p>
       </div>
       <div>
-        <p>Status: <span style={{ display: "inline-block", padding: "2px 8px", border: "1px solid #ccc", borderRadius: "4px", fontSize: "14px" }}>{status}</span></p>
-        <div style={{ display: "flex", flexWrap: "wrap", gap: "8px", marginTop: "12px" }}>
-          <button onClick={startRecording}>Start Recording</button>
-          <button onClick={stopRecording} style={{ color: "#e74c3c" }}>Stop</button>
-          <button onClick={pauseRecording}>Pause</button>
-          <button onClick={resumeRecording}>Resume</button>
-          <button onClick={requestDataNow}>Request Data</button>
+        <p className="mb-3">Status: <span className="font-mono text-sm bg-gray-100 px-2 py-0.5 rounded">{status}</span></p>
+        <div className="flex flex-wrap gap-2 mb-4">
+          <button className="px-3 py-1.5 rounded text-sm font-medium bg-gray-100 hover:bg-gray-200 border border-gray-300" onClick={startRecording}>Start Recording</button>
+          <button className="px-3 py-1.5 rounded text-sm font-medium bg-gray-100 hover:bg-gray-200 border border-gray-300" onClick={stopRecording}>Stop</button>
+          <button className="px-3 py-1.5 rounded text-sm font-medium bg-gray-100 hover:bg-gray-200 border border-gray-300" onClick={pauseRecording}>Pause</button>
+          <button className="px-3 py-1.5 rounded text-sm font-medium bg-gray-100 hover:bg-gray-200 border border-gray-300" onClick={resumeRecording}>Resume</button>
+          <button className="px-3 py-1.5 rounded text-sm font-medium bg-gray-100 hover:bg-gray-200 border border-gray-300" onClick={requestDataNow}>Request Data</button>
         </div>
         {recordingUrl && (
-          <div style={{ marginTop: "12px" }}>
-            <audio src={recordingUrl} controls style={{ width: "100%", maxWidth: "448px" }}/>
-            <p style={{ fontSize: "12px", marginTop: "4px" }}>Recorded audio playback</p>
+          <div>
+            <audio className="w-full max-w-md mt-3" src={recordingUrl} controls/>
+            <p>Recorded audio playback</p>
           </div>
         )}
       </div>
-      <a href="https://developer.mozilla.org/en-US/docs/Web/API/MediaRecorder" target="_blank" rel="noopener noreferrer">MDN: MediaRecorder API</a>
+      <a className="text-blue-600 hover:underline text-sm mt-4 inline-block" href="https://developer.mozilla.org/en-US/docs/Web/API/MediaRecorder" target="_blank" rel="noopener noreferrer">MDN: MediaRecorder API</a>
     </main>
   );
 }

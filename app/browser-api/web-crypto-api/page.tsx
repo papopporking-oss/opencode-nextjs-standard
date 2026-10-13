@@ -280,27 +280,27 @@ export default function Page() {
   };
 
   return (
-    <main>
-      <h1>Web Crypto API</h1>
-      <div style={{ padding: "12px", border: "1px solid #e67e22", borderRadius: "8px", backgroundColor: "#fef5e7", marginBottom: "16px" }}>
+    <main className="max-w-4xl mx-auto p-8">
+      <h1 className="text-3xl font-bold mb-6">Web Crypto API</h1>
+      <div className="p-3 border border-amber-500 rounded-lg bg-amber-50 mb-4">
         <p><strong>⚠️</strong> Requires HTTPS/localhost for crypto.subtle. getRandomValues works in any context. Open DevTools Console.</p>
       </div>
       <div>
-        <div style={{ display: "flex", flexWrap: "wrap", gap: "8px", marginBottom: "12px" }}>
-          <button onClick={randomNumbers}>Random Numbers & UUID</button>
-          <button onClick={hashing}>SHA-256 Hashing</button>
-          <button onClick={encryptDecrypt}>AES-GCM Encrypt/Decrypt</button>
-          <button onClick={generateKey}>Generate AES Key</button>
-          <button onClick={generateRSAKeyPair}>RSA Key Pair & Sign</button>
-          <button onClick={hmacSigning}>HMAC Sign/Verify</button>
+        <div className="flex flex-wrap gap-2 mb-4">
+          <button className="px-3 py-1.5 rounded text-sm font-medium bg-gray-100 hover:bg-gray-200 border border-gray-300" onClick={randomNumbers}>Random Numbers & UUID</button>
+          <button className="px-3 py-1.5 rounded text-sm font-medium bg-gray-100 hover:bg-gray-200 border border-gray-300" onClick={hashing}>SHA-256 Hashing</button>
+          <button className="px-3 py-1.5 rounded text-sm font-medium bg-gray-100 hover:bg-gray-200 border border-gray-300" onClick={encryptDecrypt}>AES-GCM Encrypt/Decrypt</button>
+          <button className="px-3 py-1.5 rounded text-sm font-medium bg-gray-100 hover:bg-gray-200 border border-gray-300" onClick={generateKey}>Generate AES Key</button>
+          <button className="px-3 py-1.5 rounded text-sm font-medium bg-gray-100 hover:bg-gray-200 border border-gray-300" onClick={generateRSAKeyPair}>RSA Key Pair & Sign</button>
+          <button className="px-3 py-1.5 rounded text-sm font-medium bg-gray-100 hover:bg-gray-200 border border-gray-300" onClick={hmacSigning}>HMAC Sign/Verify</button>
         </div>
         {log.length > 0 && (
-          <pre style={{ backgroundColor: "#1e1e2e", color: "#cdd6f4", padding: "12px", borderRadius: "8px", fontSize: "14px", maxHeight: "260px", overflow: "auto" }}>
+          <pre className="bg-gray-900 text-gray-100 p-3 rounded-lg text-sm max-h-64 overflow-auto mt-3 font-mono">
             {log.map((l, i) => <div key={i}>{l}</div>)}
           </pre>
         )}
       </div>
-      <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Crypto_API" target="_blank" rel="noopener noreferrer">MDN: Web Crypto API</a>
+      <a className="text-blue-600 hover:underline text-sm mt-4 inline-block" href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Crypto_API" target="_blank" rel="noopener noreferrer">MDN: Web Crypto API</a>
     </main>
   );
 }

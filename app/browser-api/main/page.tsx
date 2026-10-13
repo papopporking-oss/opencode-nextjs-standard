@@ -30,16 +30,16 @@ const apis = [
 
 export default function Page() {
   return (
-    <main style={{ maxWidth: "1200px", margin: "0 auto", padding: "32px 16px" }}>
-      <div style={{ textAlign: "center", marginBottom: "48px" }}>
-        <h1 style={{ fontSize: "2.25rem", fontWeight: "bold", marginBottom: "12px" }}>Browser API Examples</h1>
-        <p style={{ color: "#666", maxWidth: "672px", margin: "0 auto" }}>Interactive demonstrations of 25 browser APIs with detailed comments and console output. Open DevTools to see the results.</p>
+    <main>
+      <div>
+        <h1>Browser API Examples</h1>
+        <p>Interactive demonstrations of 25 browser APIs with detailed comments and console output. Open DevTools to see the results.</p>
       </div>
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: "16px" }}>
+      <div>
         {apis.map((api) => (
-          <Link key={api.href} href={api.href} style={{ display: "block", padding: "20px", border: "1px solid #e5e7eb", borderRadius: "12px", textDecoration: "none", color: "inherit", backgroundColor: "#f9fafb", transition: "background-color 0.15s" }}>
-            <h2 style={{ fontSize: "1.1rem", fontWeight: "600", marginBottom: "4px" }}>{api.name}</h2>
-            <p style={{ fontSize: "0.875rem", color: "#666" }}>{api.desc}</p>
+          <Link key={api.href} href={api.href}>
+            <h2>{api.name}</h2>
+            <p>{api.desc}</p>
           </Link>
         ))}
       </div>

@@ -135,24 +135,24 @@ export default function Page() {
   };
 
   return (
-    <main>
-      <h1>WebSocket API</h1>
-      <div style={{ padding: "12px", border: "1px solid #3498db", borderRadius: "8px", backgroundColor: "#eaf2f8", marginBottom: "16px" }}>
+    <main className="max-w-4xl mx-auto p-8">
+      <h1 className="text-3xl font-bold mb-6">WebSocket API</h1>
+      <div className="p-3 border border-blue-500 rounded-lg bg-blue-50 mb-4">
         <p>Open DevTools Console. Uses public echo server (wss://echo.websocket.org). Messages are echoed back.</p>
       </div>
       <div>
-        <p>Status: <span style={{ display: "inline-block", padding: "2px 8px", border: "1px solid #ccc", borderRadius: "4px", fontSize: "14px" }}>{socketStatus}</span></p>
-        <div style={{ display: "flex", flexWrap: "wrap", gap: "8px", marginTop: "12px" }}>
-          <button onClick={connectWebSocket}>Connect</button>
-          <button onClick={sendMessage}>Send Message</button>
+        <p className="mb-3">Status: <span className="font-mono text-sm bg-gray-100 px-2 py-0.5 rounded">{socketStatus}</span></p>
+        <div className="flex flex-wrap gap-2 mb-4">
+          <button className="px-3 py-1.5 rounded text-sm font-medium bg-gray-100 hover:bg-gray-200 border border-gray-300" onClick={connectWebSocket}>Connect</button>
+          <button className="px-3 py-1.5 rounded text-sm font-medium bg-gray-100 hover:bg-gray-200 border border-gray-300" onClick={sendMessage}>Send Message</button>
         </div>
         {messages.length > 0 && (
-          <pre style={{ backgroundColor: "#1e1e2e", color: "#cdd6f4", padding: "12px", borderRadius: "8px", fontSize: "14px", maxHeight: "200px", overflow: "auto" }}>
+          <pre className="bg-gray-900 text-gray-100 p-3 rounded-lg text-sm max-h-64 overflow-auto mt-3 font-mono">
             {messages.map((m, i) => <div key={i}>{m}</div>)}
           </pre>
         )}
       </div>
-      <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebSocket" target="_blank" rel="noopener noreferrer">MDN: WebSocket API</a>
+      <a className="text-blue-600 hover:underline text-sm mt-4 inline-block" href="https://developer.mozilla.org/en-US/docs/Web/API/WebSocket" target="_blank" rel="noopener noreferrer">MDN: WebSocket API</a>
     </main>
   );
 }

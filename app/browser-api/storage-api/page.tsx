@@ -160,46 +160,46 @@ export default function Page() {
   };
 
   return (
-    <main>
-      <h1>Storage API</h1>
-      <div style={{ padding: "12px", border: "1px solid #3498db", borderRadius: "8px", backgroundColor: "#eaf2f8", marginBottom: "16px" }}>
+    <main className="max-w-4xl mx-auto p-8">
+      <h1 className="text-3xl font-bold mb-6">Storage API</h1>
+      <div className="p-3 border border-blue-500 rounded-lg bg-blue-50 mb-4">
         <p>Open DevTools Console to see storage operations. Open a second tab to test cross-tab storage events.</p>
       </div>
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px", marginBottom: "16px" }}>
+      <div>
         {/* localStorage section */}
-        <div style={{ border: "1px solid #ccc", borderRadius: "8px", padding: "16px" }}>
-          <h2 style={{ fontSize: "18px", marginBottom: "8px" }}>localStorage (Persistent)</h2>
-          <p style={{ fontSize: "12px", color: "#666" }}>Data persists until explicitly cleared</p>
-          <p style={{ fontSize: "14px", wordBreak: "break-all", marginTop: "8px" }}>Value: {localData || "(empty)"}</p>
-          <div style={{ display: "flex", flexWrap: "wrap", gap: "4px", marginTop: "12px" }}>
-            <button onClick={writeToLocalStorage}>Write</button>
-            <button onClick={readFromLocalStorage}>Read</button>
-            <button onClick={removeFromLocalStorage} style={{ color: "#e74c3c" }}>Remove</button>
-            <button onClick={clearLocalStorage} style={{ color: "#e67e22" }}>Clear All</button>
+        <div className="border border-gray-200 rounded-lg p-4">
+          <h2 className="text-lg font-bold mb-3">localStorage (Persistent)</h2>
+          <p>Data persists until explicitly cleared</p>
+          <p>Value: {localData || "(empty)"}</p>
+          <div className="flex flex-wrap gap-2 mb-4">
+          <button className="px-3 py-1.5 rounded text-sm font-medium bg-gray-100 hover:bg-gray-200 border border-gray-300" onClick={writeToLocalStorage}>Write</button>
+            <button className="px-3 py-1.5 rounded text-sm font-medium bg-gray-100 hover:bg-gray-200 border border-gray-300" onClick={readFromLocalStorage}>Read</button>
+            <button className="px-3 py-1.5 rounded text-sm font-medium bg-gray-100 hover:bg-gray-200 border border-gray-300" onClick={removeFromLocalStorage}>Remove</button>
+            <button className="px-3 py-1.5 rounded text-sm font-medium bg-gray-100 hover:bg-gray-200 border border-gray-300" onClick={clearLocalStorage}>Clear All</button>
           </div>
         </div>
 
         {/* sessionStorage section */}
-        <div style={{ border: "1px solid #ccc", borderRadius: "8px", padding: "16px" }}>
-          <h2 style={{ fontSize: "18px", marginBottom: "8px" }}>sessionStorage (Per-Session)</h2>
-          <p style={{ fontSize: "12px", color: "#666" }}>Data cleared when tab closes. Each tab is independent.</p>
-          <p style={{ fontSize: "14px", wordBreak: "break-all", marginTop: "8px" }}>Value: {sessionData || "(empty)"}</p>
-          <div style={{ display: "flex", flexWrap: "wrap", gap: "4px", marginTop: "12px" }}>
-            <button onClick={writeToSessionStorage}>Write</button>
-            <button onClick={readFromSessionStorage}>Read</button>
+        <div className="border border-gray-200 rounded-lg p-4">
+          <h2 className="text-lg font-bold mb-3">sessionStorage (Per-Session)</h2>
+          <p>Data cleared when tab closes. Each tab is independent.</p>
+          <p>Value: {sessionData || "(empty)"}</p>
+          <div className="flex flex-wrap gap-2 mb-4">
+          <button className="px-3 py-1.5 rounded text-sm font-medium bg-gray-100 hover:bg-gray-200 border border-gray-300" onClick={writeToSessionStorage}>Write</button>
+            <button className="px-3 py-1.5 rounded text-sm font-medium bg-gray-100 hover:bg-gray-200 border border-gray-300" onClick={readFromSessionStorage}>Read</button>
           </div>
         </div>
       </div>
 
-      <button onClick={storageQuotaEstimation} style={{ marginBottom: "12px" }}>Check Storage Quota</button>
+      <button className="px-3 py-1.5 rounded text-sm font-medium bg-gray-100 hover:bg-gray-200 border border-gray-300" onClick={storageQuotaEstimation}>Check Storage Quota</button>
 
       {storageLog.length > 0 && (
-        <pre style={{ backgroundColor: "#1e1e2e", color: "#cdd6f4", padding: "12px", borderRadius: "8px", fontSize: "14px", maxHeight: "200px", overflow: "auto" }}>
+        <pre className="bg-gray-900 text-gray-100 p-3 rounded-lg text-sm max-h-64 overflow-auto mt-3 font-mono">
           {storageLog.map((l, i) => <div key={i}>{l}</div>)}
         </pre>
       )}
 
-      <a href="https://developer.mozilla.org/en-US/docs/Web/API/Storage" target="_blank" rel="noopener noreferrer">MDN: Storage API</a>
+      <a className="text-blue-600 hover:underline text-sm mt-4 inline-block" href="https://developer.mozilla.org/en-US/docs/Web/API/Storage" target="_blank" rel="noopener noreferrer">MDN: Storage API</a>
     </main>
   );
 }

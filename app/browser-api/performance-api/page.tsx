@@ -140,15 +140,15 @@ export default function Page() {
   }, []);
 
   return (
-    <main>
-      <h1>Performance API</h1>
-      <div style={{ padding: "12px", border: "1px solid #3498db", borderRadius: "8px", backgroundColor: "#eaf2f8", marginBottom: "16px" }}>
+    <main className="max-w-4xl mx-auto p-8">
+      <h1 className="text-3xl font-bold mb-6">Performance API</h1>
+      <div className="p-3 border border-blue-500 rounded-lg bg-blue-50 mb-4">
         <p>Open DevTools Console to see timing metrics, marks, measures, and resource timings.</p>
       </div>
       <div>
-        <p style={{ fontSize: "14px", color: "#666" }}>Navigation, resource, paint timings + user-defined marks/measures are logged in console.</p>
+        <p>Navigation, resource, paint timings + user-defined marks/measures are logged in console.</p>
       </div>
-      <a href="https://developer.mozilla.org/en-US/docs/Web/API/Performance_API" target="_blank" rel="noopener noreferrer">MDN: Performance API</a>
+      <a className="text-blue-600 hover:underline text-sm mt-4 inline-block" href="https://developer.mozilla.org/en-US/docs/Web/API/Performance_API" target="_blank" rel="noopener noreferrer">MDN: Performance API</a>
     </main>
   );
 }

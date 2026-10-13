@@ -113,20 +113,20 @@ export default function Page() {
   };
 
   return (
-    <main>
-      <h1>Notifications API</h1>
-      <div style={{ padding: "12px", border: "1px solid #3498db", borderRadius: "8px", backgroundColor: "#eaf2f8", marginBottom: "16px" }}>
+    <main className="max-w-4xl mx-auto p-8">
+      <h1 className="text-3xl font-bold mb-6">Notifications API</h1>
+      <div className="p-3 border border-blue-500 rounded-lg bg-blue-50 mb-4">
         <p>Open DevTools Console to see results. Click buttons to trigger notifications. Requires permission.</p>
       </div>
       <div>
-        <div style={{ display: "flex", flexWrap: "wrap", gap: "8px", alignItems: "center", marginBottom: "16px" }}>
-          <span style={{ display: "inline-block", padding: "2px 8px", border: "1px solid #ccc", borderRadius: "4px", fontSize: "14px" }}>Permission: {permission}</span>
-          <button onClick={requestPermission}>Request Permission</button>
-          <button onClick={showBasicNotification}>Show Basic Notification</button>
-          <button onClick={showRichNotification}>Show Rich Notification</button>
+        <div>
+          <span>Permission: {permission}</span>
+          <button className="px-3 py-1.5 rounded text-sm font-medium bg-gray-100 hover:bg-gray-200 border border-gray-300" onClick={requestPermission}>Request Permission</button>
+          <button className="px-3 py-1.5 rounded text-sm font-medium bg-gray-100 hover:bg-gray-200 border border-gray-300" onClick={showBasicNotification}>Show Basic Notification</button>
+          <button className="px-3 py-1.5 rounded text-sm font-medium bg-gray-100 hover:bg-gray-200 border border-gray-300" onClick={showRichNotification}>Show Rich Notification</button>
         </div>
       </div>
-      <a href="https://developer.mozilla.org/en-US/docs/Web/API/Notifications_API" target="_blank" rel="noopener noreferrer">MDN: Notifications API</a>
+      <a className="text-blue-600 hover:underline text-sm mt-4 inline-block" href="https://developer.mozilla.org/en-US/docs/Web/API/Notifications_API" target="_blank" rel="noopener noreferrer">MDN: Notifications API</a>
     </main>
   );
 }

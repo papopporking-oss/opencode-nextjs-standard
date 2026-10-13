@@ -191,35 +191,35 @@ export default function Page() {
   }, []);
 
   return (
-    <main>
-      <h1>DOM API</h1>
-      <div style={{ padding: "12px", border: "1px solid #3498db", borderRadius: "8px", backgroundColor: "#eaf2f8", marginBottom: "16px" }}>
+    <main className="max-w-4xl mx-auto p-8">
+      <h1 className="text-3xl font-bold mb-6">DOM API</h1>
+      <div className="p-3 border border-blue-500 rounded-lg bg-blue-50 mb-4">
         <p>Open DevTools Console to see DOM querying, creation, traversal, styling, and event handling.</p>
       </div>
 
-      <div id="demo-container" style={{ border: "1px solid #ccc", borderRadius: "8px", padding: "16px", marginBottom: "16px" }}>
-        <p style={{ fontSize: "14px", fontWeight: "bold" }}>This is the demo container (id=demo-container)</p>
+      <div id="demo-container">
+        <p>This is the demo container (id=demo-container)</p>
 
-        <div id="style-target" style={{ padding: "8px", marginBottom: "12px" }}>Style Target — CSS modified via JS</div>
+        <div id="style-target">Style Target — CSS modified via JS</div>
 
-        <div style={{ display: "flex", flexWrap: "wrap", gap: "8px", marginBottom: "12px" }}>
+        <div>
           <button className="demo-btn" onClick={() => console.log("DOM API: Button 1 clicked")}>Button 1</button>
           <button className="demo-btn" onClick={() => console.log("DOM API: Button 2 clicked")}>Button 2</button>
           <button className="demo-btn" onClick={() => console.log("DOM API: Button 3 clicked")}>Button 3</button>
         </div>
 
         <div id="dynamic-content">
-          <p style={{ fontSize: "12px", color: "#666" }}>Dynamic element will be appended here</p>
+          <p>Dynamic element will be appended here</p>
         </div>
       </div>
 
       {domInfo.length > 0 && (
-        <pre style={{ backgroundColor: "#1e1e2e", color: "#cdd6f4", padding: "12px", borderRadius: "8px", fontSize: "14px" }}>
+        <pre className="bg-gray-900 text-gray-100 p-3 rounded-lg text-sm max-h-64 overflow-auto mt-3 font-mono">
           {domInfo.map((l, i) => <div key={i}>{l}</div>)}
         </pre>
       )}
 
-      <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model" target="_blank" rel="noopener noreferrer">MDN: DOM API</a>
+      <a className="text-blue-600 hover:underline text-sm mt-4 inline-block" href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model" target="_blank" rel="noopener noreferrer">MDN: DOM API</a>
     </main>
   );
 }

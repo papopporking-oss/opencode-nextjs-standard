@@ -117,23 +117,23 @@ export default function Page() {
   }, []);
 
   return (
-    <main>
-      <h1>Cache API</h1>
-      <div style={{ padding: "12px", border: "1px solid #3498db", borderRadius: "8px", backgroundColor: "#eaf2f8", marginBottom: "16px" }}>
+    <main className="max-w-4xl mx-auto p-8">
+      <h1 className="text-3xl font-bold mb-6">Cache API</h1>
+      <div className="p-3 border border-blue-500 rounded-lg bg-blue-50 mb-4">
         <p>Open DevTools Console. Requires secure context. Cache operations are logged to console.</p>
       </div>
       <div>
-        <p>Status: <span style={{ display: "inline-block", padding: "2px 8px", border: "1px solid #ccc", borderRadius: "4px", fontSize: "14px" }}>{cacheStatus}</span></p>
+        <p className="mb-3">Status: <span className="font-mono text-sm bg-gray-100 px-2 py-0.5 rounded">{cacheStatus}</span></p>
         {cachedUrls.length > 0 && (
-          <div style={{ marginTop: "12px" }}>
-            <p style={{ fontSize: "14px", fontWeight: "bold" }}>Cached URLs:</p>
+          <div>
+            <p>Cached URLs:</p>
             <ul>
-              {cachedUrls.map((url, i) => <li key={i} style={{ fontFamily: "monospace", fontSize: "12px", wordBreak: "break-all" }}>{url}</li>)}
+              {cachedUrls.map((url, i) => <li key={i}>{url}</li>)}
             </ul>
           </div>
         )}
       </div>
-      <a href="https://developer.mozilla.org/en-US/docs/Web/API/Cache" target="_blank" rel="noopener noreferrer">MDN: Cache API</a>
+      <a className="text-blue-600 hover:underline text-sm mt-4 inline-block" href="https://developer.mozilla.org/en-US/docs/Web/API/Cache" target="_blank" rel="noopener noreferrer">MDN: Cache API</a>
     </main>
   );
 }

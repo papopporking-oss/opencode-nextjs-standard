@@ -173,19 +173,19 @@ export default function Page() {
   };
 
   return (
-    <main>
-      <h1>Web Authentication API</h1>
-      <div style={{ padding: "12px", border: "1px solid #e67e22", borderRadius: "8px", backgroundColor: "#fef5e7", marginBottom: "16px" }}>
+    <main className="max-w-4xl mx-auto p-8">
+      <h1 className="text-3xl font-bold mb-6">Web Authentication API</h1>
+      <div className="p-3 border border-amber-500 rounded-lg bg-amber-50 mb-4">
         <p><strong>⚠️</strong> Requires HTTPS/localhost. Needs platform authenticator (Touch ID, Windows Hello, etc). Server-side challenge needed for prod.</p>
       </div>
       <div>
-        <p>Status: <span style={{ display: "inline-block", padding: "2px 8px", border: "1px solid #ccc", borderRadius: "4px", fontSize: "14px" }}>{status}</span></p>
-        <div style={{ display: "flex", flexWrap: "wrap", gap: "8px", marginTop: "12px" }}>
-          <button onClick={registerCredential}>Register Credential</button>
-          <button onClick={authenticate}>Authenticate</button>
+        <p className="mb-3">Status: <span className="font-mono text-sm bg-gray-100 px-2 py-0.5 rounded">{status}</span></p>
+        <div className="flex flex-wrap gap-2 mb-4">
+          <button className="px-3 py-1.5 rounded text-sm font-medium bg-gray-100 hover:bg-gray-200 border border-gray-300" onClick={registerCredential}>Register Credential</button>
+          <button className="px-3 py-1.5 rounded text-sm font-medium bg-gray-100 hover:bg-gray-200 border border-gray-300" onClick={authenticate}>Authenticate</button>
         </div>
       </div>
-      <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Authentication_API" target="_blank" rel="noopener noreferrer">MDN: Web Authentication API</a>
+      <a className="text-blue-600 hover:underline text-sm mt-4 inline-block" href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Authentication_API" target="_blank" rel="noopener noreferrer">MDN: Web Authentication API</a>
     </main>
   );
 }

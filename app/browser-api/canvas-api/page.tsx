@@ -197,13 +197,13 @@ export default function Page() {
   }, []);
 
   return (
-    <main>
-      <h1>Canvas API</h1>
-      <div style={{ padding: "12px", border: "1px solid #3498db", borderRadius: "8px", backgroundColor: "#eaf2f8", marginBottom: "16px" }}>
+    <main className="max-w-4xl mx-auto p-8">
+      <h1 className="text-3xl font-bold mb-6">Canvas API</h1>
+      <div className="p-3 border border-blue-500 rounded-lg bg-blue-50 mb-4">
         <p>Open DevTools Console to see drawing steps. Shapes, text, gradients, transforms, and pixel data are logged.</p>
       </div>
-      <canvas ref={canvasRef} width={500} height={400} style={{ border: "1px solid #ccc", borderRadius: "8px", maxWidth: "100%" }}/>
-      <a href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API" target="_blank" rel="noopener noreferrer">MDN: Canvas API</a>
+      <canvas className="border border-gray-300 rounded-lg" ref={canvasRef} width={500} height={400}/>
+      <a className="text-blue-600 hover:underline text-sm mt-4 inline-block" href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API" target="_blank" rel="noopener noreferrer">MDN: Canvas API</a>
     </main>
   );
 }

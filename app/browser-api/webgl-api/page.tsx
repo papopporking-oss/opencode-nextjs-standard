@@ -155,13 +155,13 @@ export default function Page() {
   }
 
   return (
-    <main>
-      <h1>WebGL API</h1>
-      <div style={{ padding: "12px", border: "1px solid #3498db", borderRadius: "8px", backgroundColor: "#eaf2f8", marginBottom: "16px" }}>
+    <main className="max-w-4xl mx-auto p-8">
+      <h1 className="text-3xl font-bold mb-6">WebGL API</h1>
+      <div className="p-3 border border-blue-500 rounded-lg bg-blue-50 mb-4">
         <p>Open DevTools Console to see GPU info and rendering steps. An orange triangle is rendered on the canvas below.</p>
       </div>
-      <canvas ref={canvasRef} width={400} height={300} style={{ border: "1px solid #ccc", borderRadius: "8px", backgroundColor: "#2a2a3e" }}/>
-      <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API" target="_blank" rel="noopener noreferrer">MDN: WebGL API</a>
+      <canvas className="border border-gray-300 rounded-lg" ref={canvasRef} width={400} height={300}/>
+      <a className="text-blue-600 hover:underline text-sm mt-4 inline-block" href="https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API" target="_blank" rel="noopener noreferrer">MDN: WebGL API</a>
     </main>
   );
 }

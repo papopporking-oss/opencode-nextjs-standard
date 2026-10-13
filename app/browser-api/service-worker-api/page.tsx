@@ -113,16 +113,16 @@ export default function Page() {
   }, []);
 
   return (
-    <main>
-      <h1>Service Worker API</h1>
-      <div style={{ padding: "12px", border: "1px solid #e67e22", borderRadius: "8px", backgroundColor: "#fef5e7", marginBottom: "16px" }}>
+    <main className="max-w-4xl mx-auto p-8">
+      <h1 className="text-3xl font-bold mb-6">Service Worker API</h1>
+      <div className="p-3 border border-amber-500 rounded-lg bg-amber-50 mb-4">
         <p><strong>⚠️</strong> Requires HTTPS/localhost and a service worker file at <code>/public/sw.js</code>. Open DevTools Console.</p>
       </div>
       <div>
-        <p>Status: <span style={{ display: "inline-block", padding: "2px 8px", border: "1px solid #ccc", borderRadius: "4px", fontSize: "14px" }}>{status}</span></p>
-        <p style={{ fontSize: "14px", color: "#666" }}>To fully test, create a <code>public/sw.js</code> file with event listeners (install, activate, fetch).</p>
+        <p className="mb-3">Status: <span className="font-mono text-sm bg-gray-100 px-2 py-0.5 rounded">{status}</span></p>
+        <p>To fully test, create a <code>public/sw.js</code> file with event listeners (install, activate, fetch).</p>
       </div>
-      <a href="https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API" target="_blank" rel="noopener noreferrer">MDN: Service Worker API</a>
+      <a className="text-blue-600 hover:underline text-sm mt-4 inline-block" href="https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API" target="_blank" rel="noopener noreferrer">MDN: Service Worker API</a>
     </main>
   );
 }

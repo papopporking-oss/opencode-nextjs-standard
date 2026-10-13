@@ -107,25 +107,25 @@ export default function Page() {
   };
 
   return (
-    <main>
-      <h1>File API</h1>
-      <div style={{ padding: "12px", border: "1px solid #3498db", borderRadius: "8px", backgroundColor: "#eaf2f8", marginBottom: "16px" }}>
+    <main className="max-w-4xl mx-auto p-8">
+      <h1 className="text-3xl font-bold mb-6">File API</h1>
+      <div className="p-3 border border-blue-500 rounded-lg bg-blue-50 mb-4">
         <p>Select a text file and open DevTools Console to see file metadata and content.</p>
       </div>
       <div>
-        <fieldset style={{ border: "1px solid #ccc", padding: "12px", borderRadius: "8px", marginBottom: "12px" }}>
-          <legend>Choose a file</legend>
-          <input type="file" onChange={handleFileSelect}/>
+        <fieldset className="border border-gray-300 rounded-lg p-4 mb-4">
+          <legend className="text-sm font-medium px-2">Choose a file</legend>
+          <input type="file" className="text-sm mt-2" onChange={handleFileSelect}/>
         </fieldset>
-        <button onClick={handleCreateBlob} style={{ marginBottom: "12px" }}>Create and Download Blob</button>
+        <button className="px-3 py-1.5 rounded text-sm font-medium bg-gray-100 hover:bg-gray-200 border border-gray-300" onClick={handleCreateBlob}>Create and Download Blob</button>
         {fileInfo.length > 0 && (
-          <pre style={{ backgroundColor: "#1e1e2e", color: "#cdd6f4", padding: "12px", borderRadius: "8px", fontSize: "14px", overflow: "auto" }}>{fileInfo.join("\n")}</pre>
+          <pre className="bg-gray-900 text-gray-100 p-3 rounded-lg text-sm max-h-64 overflow-auto mt-3 font-mono">{fileInfo.join("\n")}</pre>
         )}
         {fileContent && (
-          <pre style={{ backgroundColor: "#1e1e2e", color: "#cdd6f4", padding: "12px", borderRadius: "8px", fontSize: "14px", maxHeight: "200px", overflow: "auto", whiteSpace: "pre-wrap" }}>{fileContent}</pre>
+          <pre className="bg-gray-900 text-gray-100 p-3 rounded-lg text-sm max-h-64 overflow-auto mt-3 font-mono">{fileContent}</pre>
         )}
       </div>
-      <a href="https://developer.mozilla.org/en-US/docs/Web/API/File_API" target="_blank" rel="noopener noreferrer">MDN: File API</a>
+      <a className="text-blue-600 hover:underline text-sm mt-4 inline-block" href="https://developer.mozilla.org/en-US/docs/Web/API/File_API" target="_blank" rel="noopener noreferrer">MDN: File API</a>
     </main>
   );
 }

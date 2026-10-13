@@ -217,30 +217,30 @@ export default function Page() {
   };
 
   return (
-    <main>
-      <h1>Fetch API</h1>
-      <div style={{ padding: "12px", border: "1px solid #3498db", borderRadius: "8px", backgroundColor: "#eaf2f8", marginBottom: "16px" }}>
+    <main className="max-w-4xl mx-auto p-8">
+      <h1 className="text-3xl font-bold mb-6">Fetch API</h1>
+      <div className="p-3 border border-blue-500 rounded-lg bg-blue-50 mb-4">
         <p>Open DevTools Console to see fetch requests, responses, headers, and parsed data. Uses public JSONPlaceholder API.</p>
       </div>
       <div>
-        {loading && <p style={{ fontStyle: "italic" }}>Loading: {loading}</p>}
-        <p style={{ fontSize: "14px", color: "#666" }}>Status: {loading || "Idle"}</p>
-        <div style={{ display: "flex", flexWrap: "wrap", gap: "8px", marginTop: "12px" }}>
-          <button onClick={basicGet}>GET Request</button>
-          <button onClick={postRequest}>POST Request</button>
-          <button onClick={putRequest}>PUT Request</button>
-          <button onClick={deleteRequest} style={{ color: "#e74c3c" }}>DELETE Request</button>
-          <button onClick={errorHandling}>Error Handling</button>
-          <button onClick={abortRequest}>Test Abort</button>
-          <button onClick={uploadFile}>Upload File</button>
+        {loading && <p>Loading: {loading}</p>}
+        <p>Status: {loading || "Idle"}</p>
+        <div className="flex flex-wrap gap-2 mb-4">
+          <button className="px-3 py-1.5 rounded text-sm font-medium bg-gray-100 hover:bg-gray-200 border border-gray-300" onClick={basicGet}>GET Request</button>
+          <button className="px-3 py-1.5 rounded text-sm font-medium bg-gray-100 hover:bg-gray-200 border border-gray-300" onClick={postRequest}>POST Request</button>
+          <button className="px-3 py-1.5 rounded text-sm font-medium bg-gray-100 hover:bg-gray-200 border border-gray-300" onClick={putRequest}>PUT Request</button>
+          <button className="px-3 py-1.5 rounded text-sm font-medium bg-gray-100 hover:bg-gray-200 border border-gray-300" onClick={deleteRequest}>DELETE Request</button>
+          <button className="px-3 py-1.5 rounded text-sm font-medium bg-gray-100 hover:bg-gray-200 border border-gray-300" onClick={errorHandling}>Error Handling</button>
+          <button className="px-3 py-1.5 rounded text-sm font-medium bg-gray-100 hover:bg-gray-200 border border-gray-300" onClick={abortRequest}>Test Abort</button>
+          <button className="px-3 py-1.5 rounded text-sm font-medium bg-gray-100 hover:bg-gray-200 border border-gray-300" onClick={uploadFile}>Upload File</button>
         </div>
         {results.length > 0 && (
-          <pre style={{ backgroundColor: "#1e1e2e", color: "#cdd6f4", padding: "12px", borderRadius: "8px", fontSize: "14px", maxHeight: "260px", overflow: "auto", marginTop: "12px" }}>
+          <pre className="bg-gray-900 text-gray-100 p-3 rounded-lg text-sm max-h-64 overflow-auto mt-3 font-mono">
             {results.map((r, i) => <div key={i}>{r}</div>)}
           </pre>
         )}
       </div>
-      <a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API" target="_blank" rel="noopener noreferrer">MDN: Fetch API</a>
+      <a className="text-blue-600 hover:underline text-sm mt-4 inline-block" href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API" target="_blank" rel="noopener noreferrer">MDN: Fetch API</a>
     </main>
   );
 }

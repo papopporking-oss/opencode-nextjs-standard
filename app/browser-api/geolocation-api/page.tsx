@@ -76,14 +76,14 @@ export default function Page() {
   }, []);
 
   return (
-    <main>
-      <h1>Geolocation API</h1>
-      <div style={{ padding: "12px", border: "1px solid #3498db", borderRadius: "8px", backgroundColor: "#eaf2f8", marginBottom: "16px" }}>
+    <main className="max-w-4xl mx-auto p-8">
+      <h1 className="text-3xl font-bold mb-6">Geolocation API</h1>
+      <div className="p-3 border border-blue-500 rounded-lg bg-blue-50 mb-4">
         <p>Open DevTools Console to see geolocation output. You will be prompted to allow location access.</p>
       </div>
       <div>
         <p>Uses <code>navigator.geolocation.getCurrentPosition()</code> and <code>navigator.geolocation.watchPosition()</code></p>
-        <a href="https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API" target="_blank" rel="noopener noreferrer">MDN: Geolocation API</a>
+        <a className="text-blue-600 hover:underline text-sm mt-4 inline-block" href="https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API" target="_blank" rel="noopener noreferrer">MDN: Geolocation API</a>
       </div>
     </main>
   );

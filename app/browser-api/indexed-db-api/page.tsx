@@ -205,30 +205,30 @@ export default function Page() {
   };
 
   return (
-    <main>
-      <h1>IndexedDB API</h1>
-      <div style={{ padding: "12px", border: "1px solid #3498db", borderRadius: "8px", backgroundColor: "#eaf2f8", marginBottom: "16px" }}>
+    <main className="max-w-4xl mx-auto p-8">
+      <h1 className="text-3xl font-bold mb-6">IndexedDB API</h1>
+      <div className="p-3 border border-blue-500 rounded-lg bg-blue-50 mb-4">
         <p>Open DevTools Console to see database operations. Data persists in browser storage.</p>
       </div>
       <div>
-        <p>DB Status: <span style={{ display: "inline-block", padding: "2px 8px", border: "1px solid #ccc", borderRadius: "4px", fontSize: "14px" }}>{dbStatus}</span></p>
-        <div style={{ display: "flex", flexWrap: "wrap", gap: "8px", margin: "12px 0" }}>
-          <button onClick={addRecord}>Add Random Record</button>
-          <button onClick={readAllRecords}>Read All Records</button>
+        <p className="mb-3">DB Status: <span className="font-mono text-sm bg-gray-100 px-2 py-0.5 rounded">{dbStatus}</span></p>
+        <div className="flex flex-wrap gap-2 mb-4">
+          <button className="px-3 py-1.5 rounded text-sm font-medium bg-gray-100 hover:bg-gray-200 border border-gray-300" onClick={addRecord}>Add Random Record</button>
+          <button className="px-3 py-1.5 rounded text-sm font-medium bg-gray-100 hover:bg-gray-200 border border-gray-300" onClick={readAllRecords}>Read All Records</button>
         </div>
         {records.length > 0 && (
           <div>
-            <p style={{ fontSize: "14px", fontWeight: "bold" }}>Records ({records.length}):</p>
+            <p>Records ({records.length}):</p>
             {records.map((rec, i) => (
-              <div key={i} style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "8px" }}>
-                <pre style={{ backgroundColor: "#1e1e2e", color: "#cdd6f4", padding: "8px 12px", borderRadius: "8px", fontSize: "12px", overflow: "auto", flex: 1 }}>{rec}</pre>
-                <button onClick={() => { const obj = JSON.parse(rec); deleteRecord(obj.id); }} style={{ color: "#e74c3c", fontSize: "12px" }}>Delete</button>
+              <div key={i}>
+                <pre className="bg-gray-900 text-gray-100 p-3 rounded-lg text-sm max-h-64 overflow-auto mt-3 font-mono">{rec}</pre>
+                <button className="px-3 py-1.5 rounded text-sm font-medium bg-gray-100 hover:bg-gray-200 border border-gray-300" onClick={() => { const obj = JSON.parse(rec); deleteRecord(obj.id); }}>Delete</button>
               </div>
             ))}
           </div>
         )}
       </div>
-      <a href="https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API" target="_blank" rel="noopener noreferrer">MDN: IndexedDB API</a>
+      <a className="text-blue-600 hover:underline text-sm mt-4 inline-block" href="https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API" target="_blank" rel="noopener noreferrer">MDN: IndexedDB API</a>
     </main>
   );
 }
