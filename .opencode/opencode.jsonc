@@ -1,0 +1,10 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "shell": "/bin/bash",
+  "model": "deepseek-ai/DeepSeek-V4-Pro",
+  "default_agent": "build",
+  // "websearch": {
+  //   "provider": "random"
+  // }
+  "websearch": false
+}
