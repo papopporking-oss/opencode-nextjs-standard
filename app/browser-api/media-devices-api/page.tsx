@@ -88,22 +88,33 @@ export default function Page() {
   }, []);
 
   return (
-    <main className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-4">MediaDevices API</h1>
-      <div className="alert alert-info mb-4">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="w-6 h-6 stroke-current shrink-0"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-        <span>Open DevTools Console to see device enumeration & stream details. Camera permission is required.</span>
+    <main>
+      <h1>MediaDevices API</h1>
+      <div style={{ padding: "12px", border: "1px solid #3498db", borderRadius: "8px", backgroundColor: "#eaf2f8", marginBottom: "16px" }}>
+        <p>Open DevTools Console to see device enumeration and stream details. Camera permission is required.</p>
       </div>
-      <video ref={videoRef} autoPlay playsInline className="w-full max-w-md rounded-lg border mb-4"/>
+      <video ref={videoRef} autoPlay playsInline style={{ width: "100%", maxWidth: "448px", borderRadius: "8px", border: "1px solid #ccc", marginBottom: "16px" }}/>
       {deviceList.length > 0 && (
-        <div className="overflow-x-auto">
-          <table className="table">
-            <thead><tr><th>Kind</th><th>Label</th><th>Device ID</th></tr></thead>
-            <tbody>{deviceList.map((d, i) => (<tr key={i}><td>{d.kind}</td><td>{d.label}</td><td className="text-xs font-mono">{d.deviceId}</td></tr>))}</tbody>
-          </table>
-        </div>
+        <table style={{ width: "100%", borderCollapse: "collapse" }}>
+          <thead>
+            <tr style={{ borderBottom: "1px solid #ccc" }}>
+              <th style={{ textAlign: "left", padding: "8px" }}>Kind</th>
+              <th style={{ textAlign: "left", padding: "8px" }}>Label</th>
+              <th style={{ textAlign: "left", padding: "8px" }}>Device ID</th>
+            </tr>
+          </thead>
+          <tbody>
+            {deviceList.map((d, i) => (
+              <tr key={i} style={{ borderBottom: "1px solid #eee" }}>
+                <td style={{ padding: "8px" }}>{d.kind}</td>
+                <td style={{ padding: "8px" }}>{d.label}</td>
+                <td style={{ padding: "8px", fontSize: "12px", fontFamily: "monospace" }}>{d.deviceId}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       )}
-      <a href="https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices" target="_blank" rel="noopener noreferrer" className="link link-primary">MDN: MediaDevices API</a>
+      <a href="https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices" target="_blank" rel="noopener noreferrer">MDN: MediaDevices API</a>
     </main>
   );
 }

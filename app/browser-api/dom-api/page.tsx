@@ -28,16 +28,16 @@ export default function Page() {
     console.log("DOM API: getElementById — element:", main?.tagName);
 
     // querySelector: CSS selector, returns first match
-    const firstButton = document.querySelector(".btn");
-    console.log("DOM API: querySelector('.btn'):", firstButton?.tagName);
+    const firstButton = document.querySelector(".demo-btn");
+    console.log("DOM API: querySelector('.demo-btn'):", firstButton?.tagName);
 
     // querySelectorAll: returns static NodeList of all matches
-    const allButtons = document.querySelectorAll(".btn");
-    console.log(`DOM API: querySelectorAll('.btn'): ${allButtons.length} button(s)`);
+    const allButtons = document.querySelectorAll(".demo-btn");
+    console.log(`DOM API: querySelectorAll('.demo-btn'): ${allButtons.length} button(s)`);
 
     // getElementsByClassName: returns live HTMLCollection (auto-updates!)
-    const liveCollection = document.getElementsByClassName("btn");
-    console.log(`DOM API: getElementsByClassName('btn'): ${liveCollection.length} button(s) (live)`);
+    const liveCollection = document.getElementsByClassName("demo-btn");
+    console.log(`DOM API: getElementsByClassName('demo-btn'): ${liveCollection.length} button(s) (live)`);
 
     // Step 3: Element properties
     if (firstButton) {
@@ -56,7 +56,7 @@ export default function Page() {
     // Step 4: Creating new elements
     const newDiv = document.createElement("div");
     newDiv.textContent = "Dynamically created element";
-    newDiv.className = "badge badge-accent";
+    newDiv.className = "dynamic-el";
     newDiv.id = "dynamic-element";
     console.log("DOM API: createElement('div') — new element:", newDiv);
 
@@ -191,34 +191,35 @@ export default function Page() {
   }, []);
 
   return (
-    <main className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-4">DOM API</h1>
-      <div className="alert alert-info mb-4">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="w-6 h-6 stroke-current shrink-0"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-        <span>Open DevTools Console to see DOM querying, creation, traversal, styling, and event handling.</span>
+    <main>
+      <h1>DOM API</h1>
+      <div style={{ padding: "12px", border: "1px solid #3498db", borderRadius: "8px", backgroundColor: "#eaf2f8", marginBottom: "16px" }}>
+        <p>Open DevTools Console to see DOM querying, creation, traversal, styling, and event handling.</p>
       </div>
 
-      <div id="demo-container" className="space-y-4 p-4 border rounded-lg mb-4">
-        <p className="text-sm font-semibold">This is the demo container (id=demo-container)</p>
+      <div id="demo-container" style={{ border: "1px solid #ccc", borderRadius: "8px", padding: "16px", marginBottom: "16px" }}>
+        <p style={{ fontSize: "14px", fontWeight: "bold" }}>This is the demo container (id=demo-container)</p>
 
-        <div id="style-target" className="p-2">Style Target — CSS modified via JS</div>
+        <div id="style-target" style={{ padding: "8px", marginBottom: "12px" }}>Style Target — CSS modified via JS</div>
 
-        <div className="flex flex-wrap gap-2">
-          <button className="btn btn-sm" onClick={() => console.log("DOM API: Button clicked")}>Button 1</button>
-          <button className="btn btn-sm btn-primary" onClick={() => console.log("DOM API: Button 2 clicked")}>Button 2</button>
-          <button className="btn btn-sm btn-accent" onClick={() => console.log("DOM API: Button 3 clicked")}>Button 3</button>
+        <div style={{ display: "flex", flexWrap: "wrap", gap: "8px", marginBottom: "12px" }}>
+          <button className="demo-btn" onClick={() => console.log("DOM API: Button 1 clicked")}>Button 1</button>
+          <button className="demo-btn" onClick={() => console.log("DOM API: Button 2 clicked")}>Button 2</button>
+          <button className="demo-btn" onClick={() => console.log("DOM API: Button 3 clicked")}>Button 3</button>
         </div>
 
         <div id="dynamic-content">
-          <p className="text-xs text-base-content/60">Dynamic element will be appended here</p>
+          <p style={{ fontSize: "12px", color: "#666" }}>Dynamic element will be appended here</p>
         </div>
       </div>
 
       {domInfo.length > 0 && (
-        <div className="mockup-code"><pre className="px-4 py-2 text-sm">{domInfo.map((l, i) => <div key={i}>{l}</div>)}</pre></div>
+        <pre style={{ backgroundColor: "#1e1e2e", color: "#cdd6f4", padding: "12px", borderRadius: "8px", fontSize: "14px" }}>
+          {domInfo.map((l, i) => <div key={i}>{l}</div>)}
+        </pre>
       )}
 
-      <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model" target="_blank" rel="noopener noreferrer" className="link link-primary mt-4 inline-block">MDN: DOM API</a>
+      <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model" target="_blank" rel="noopener noreferrer">MDN: DOM API</a>
     </main>
   );
 }

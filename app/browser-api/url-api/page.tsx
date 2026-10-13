@@ -210,24 +210,25 @@ export default function Page() {
   };
 
   return (
-    <main className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-4">URL API</h1>
-      <div className="alert alert-info mb-4">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="w-6 h-6 stroke-current shrink-0"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-        <span>Open DevTools Console to see URL parsing, construction, and URLSearchParams manipulation.</span>
+    <main>
+      <h1>URL API</h1>
+      <div style={{ padding: "12px", border: "1px solid #3498db", borderRadius: "8px", backgroundColor: "#eaf2f8", marginBottom: "16px" }}>
+        <p>Open DevTools Console to see URL parsing, construction, and URLSearchParams manipulation.</p>
       </div>
-      <div className="space-y-4">
-        <div className="flex flex-wrap gap-2">
-          <button className="btn btn-primary" onClick={parseURL}>Parse URL</button>
-          <button className="btn btn-secondary" onClick={urlSearchParams}>URLSearchParams</button>
-          <button className="btn btn-accent" onClick={constructURL}>Construct URL</button>
-          <button className="btn btn-info" onClick={urlValidation}>Validate URLs</button>
+      <div>
+        <div style={{ display: "flex", flexWrap: "wrap", gap: "8px", marginBottom: "12px" }}>
+          <button onClick={parseURL}>Parse URL</button>
+          <button onClick={urlSearchParams}>URLSearchParams</button>
+          <button onClick={constructURL}>Construct URL</button>
+          <button onClick={urlValidation}>Validate URLs</button>
         </div>
         {log.length > 0 && (
-          <div className="mockup-code"><pre className="px-4 py-2 text-sm max-h-64 overflow-y-auto">{log.map((l, i) => <div key={i}>{l}</div>)}</pre></div>
+          <pre style={{ backgroundColor: "#1e1e2e", color: "#cdd6f4", padding: "12px", borderRadius: "8px", fontSize: "14px", maxHeight: "260px", overflow: "auto" }}>
+            {log.map((l, i) => <div key={i}>{l}</div>)}
+          </pre>
         )}
       </div>
-      <a href="https://developer.mozilla.org/en-US/docs/Web/API/URL" target="_blank" rel="noopener noreferrer" className="link link-primary mt-4 inline-block">MDN: URL API</a>
+      <a href="https://developer.mozilla.org/en-US/docs/Web/API/URL" target="_blank" rel="noopener noreferrer">MDN: URL API</a>
     </main>
   );
 }

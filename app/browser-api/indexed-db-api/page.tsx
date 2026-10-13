@@ -205,34 +205,30 @@ export default function Page() {
   };
 
   return (
-    <main className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-4">IndexedDB API</h1>
-      <div className="alert alert-info mb-4">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="w-6 h-6 stroke-current shrink-0"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-        <span>Open DevTools Console to see database operations. Data persists in browser storage.</span>
+    <main>
+      <h1>IndexedDB API</h1>
+      <div style={{ padding: "12px", border: "1px solid #3498db", borderRadius: "8px", backgroundColor: "#eaf2f8", marginBottom: "16px" }}>
+        <p>Open DevTools Console to see database operations. Data persists in browser storage.</p>
       </div>
-      <div className="space-y-4">
-        <p>DB Status: <span className="badge badge-outline">{dbStatus}</span></p>
-        <div className="flex flex-wrap gap-2">
-          <button className="btn btn-primary" onClick={addRecord}>Add Random Record</button>
-          <button className="btn btn-secondary" onClick={readAllRecords}>Read All Records</button>
+      <div>
+        <p>DB Status: <span style={{ display: "inline-block", padding: "2px 8px", border: "1px solid #ccc", borderRadius: "4px", fontSize: "14px" }}>{dbStatus}</span></p>
+        <div style={{ display: "flex", flexWrap: "wrap", gap: "8px", margin: "12px 0" }}>
+          <button onClick={addRecord}>Add Random Record</button>
+          <button onClick={readAllRecords}>Read All Records</button>
         </div>
         {records.length > 0 && (
-          <div className="space-y-2">
-            <p className="text-sm font-semibold">Records ({records.length}):</p>
+          <div>
+            <p style={{ fontSize: "14px", fontWeight: "bold" }}>Records ({records.length}):</p>
             {records.map((rec, i) => (
-              <div key={i} className="flex items-center gap-2">
-                <div className="mockup-code flex-1"><pre className="px-4 py-2 text-xs">{rec}</pre></div>
-                <button className="btn btn-error btn-xs" onClick={() => {
-                  const obj = JSON.parse(rec);
-                  deleteRecord(obj.id);
-                }}>Delete</button>
+              <div key={i} style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "8px" }}>
+                <pre style={{ backgroundColor: "#1e1e2e", color: "#cdd6f4", padding: "8px 12px", borderRadius: "8px", fontSize: "12px", overflow: "auto", flex: 1 }}>{rec}</pre>
+                <button onClick={() => { const obj = JSON.parse(rec); deleteRecord(obj.id); }} style={{ color: "#e74c3c", fontSize: "12px" }}>Delete</button>
               </div>
             ))}
           </div>
         )}
       </div>
-      <a href="https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API" target="_blank" rel="noopener noreferrer" className="link link-primary mt-4 inline-block">MDN: IndexedDB API</a>
+      <a href="https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API" target="_blank" rel="noopener noreferrer">MDN: IndexedDB API</a>
     </main>
   );
 }

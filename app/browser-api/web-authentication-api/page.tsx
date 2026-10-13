@@ -173,20 +173,19 @@ export default function Page() {
   };
 
   return (
-    <main className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-4">Web Authentication API</h1>
-      <div className="alert alert-warning mb-4">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="w-6 h-6 stroke-current shrink-0"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
-        <span>Requires HTTPS/localhost. Needs platform authenticator (Touch ID, Windows Hello, etc). Server-side challenge needed for prod.</span>
+    <main>
+      <h1>Web Authentication API</h1>
+      <div style={{ padding: "12px", border: "1px solid #e67e22", borderRadius: "8px", backgroundColor: "#fef5e7", marginBottom: "16px" }}>
+        <p><strong>⚠️</strong> Requires HTTPS/localhost. Needs platform authenticator (Touch ID, Windows Hello, etc). Server-side challenge needed for prod.</p>
       </div>
-      <div className="space-y-4">
-        <p>Status: <span className="badge badge-outline">{status}</span></p>
-        <div className="flex flex-wrap gap-2">
-          <button className="btn btn-primary" onClick={registerCredential}>Register Credential</button>
-          <button className="btn btn-secondary" onClick={authenticate}>Authenticate</button>
+      <div>
+        <p>Status: <span style={{ display: "inline-block", padding: "2px 8px", border: "1px solid #ccc", borderRadius: "4px", fontSize: "14px" }}>{status}</span></p>
+        <div style={{ display: "flex", flexWrap: "wrap", gap: "8px", marginTop: "12px" }}>
+          <button onClick={registerCredential}>Register Credential</button>
+          <button onClick={authenticate}>Authenticate</button>
         </div>
       </div>
-      <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Authentication_API" target="_blank" rel="noopener noreferrer" className="link link-primary mt-4 inline-block">MDN: Web Authentication API</a>
+      <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Authentication_API" target="_blank" rel="noopener noreferrer">MDN: Web Authentication API</a>
     </main>
   );
 }

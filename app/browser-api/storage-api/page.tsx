@@ -150,8 +150,8 @@ export default function Page() {
     if (navigator.storage && navigator.storage.estimate) {
       const estimate = await navigator.storage.estimate();
       console.log("Storage API: Storage estimate:");
-      console.log("  Usage:", (estimate.usage ?? 0 / 1048576).toFixed(2), "MB");
-      console.log("  Quota:", (estimate.quota ?? 0 / 1048576).toFixed(2), "MB");
+      console.log("  Usage:", ((estimate.usage ?? 0) / 1048576).toFixed(2), "MB");
+      console.log("  Quota:", ((estimate.quota ?? 0) / 1048576).toFixed(2), "MB");
       console.log("  Percent used:", estimate.quota && estimate.usage ? ((estimate.usage / estimate.quota) * 100).toFixed(1) + "%" : "N/A");
       addLog(`Storage quota — usage: ${((estimate.usage ?? 0) / 1048576).toFixed(2)} MB, quota: ${((estimate.quota ?? 0) / 1048576).toFixed(2)} MB`);
     } else {
@@ -160,49 +160,46 @@ export default function Page() {
   };
 
   return (
-    <main className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-4">Storage API</h1>
-      <div className="alert alert-info mb-4">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="w-6 h-6 stroke-current shrink-0"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-        <span>Open DevTools Console to see storage operations. Open a second tab to test cross-tab storage events.</span>
+    <main>
+      <h1>Storage API</h1>
+      <div style={{ padding: "12px", border: "1px solid #3498db", borderRadius: "8px", backgroundColor: "#eaf2f8", marginBottom: "16px" }}>
+        <p>Open DevTools Console to see storage operations. Open a second tab to test cross-tab storage events.</p>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px", marginBottom: "16px" }}>
         {/* localStorage section */}
-        <div className="card bg-base-200">
-          <div className="card-body p-4">
-            <h2 className="card-title text-lg">localStorage (Persistent)</h2>
-            <p className="text-xs text-base-content/60">Data persists until explicitly cleared</p>
-            <p className="text-sm break-all">Value: {localData || "(empty)"}</p>
-            <div className="card-actions flex-wrap gap-1">
-              <button className="btn btn-sm btn-primary" onClick={writeToLocalStorage}>Write</button>
-              <button className="btn btn-sm btn-secondary" onClick={readFromLocalStorage}>Read</button>
-              <button className="btn btn-sm btn-error" onClick={removeFromLocalStorage}>Remove</button>
-              <button className="btn btn-sm btn-warning" onClick={clearLocalStorage}>Clear All</button>
-            </div>
+        <div style={{ border: "1px solid #ccc", borderRadius: "8px", padding: "16px" }}>
+          <h2 style={{ fontSize: "18px", marginBottom: "8px" }}>localStorage (Persistent)</h2>
+          <p style={{ fontSize: "12px", color: "#666" }}>Data persists until explicitly cleared</p>
+          <p style={{ fontSize: "14px", wordBreak: "break-all", marginTop: "8px" }}>Value: {localData || "(empty)"}</p>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: "4px", marginTop: "12px" }}>
+            <button onClick={writeToLocalStorage}>Write</button>
+            <button onClick={readFromLocalStorage}>Read</button>
+            <button onClick={removeFromLocalStorage} style={{ color: "#e74c3c" }}>Remove</button>
+            <button onClick={clearLocalStorage} style={{ color: "#e67e22" }}>Clear All</button>
           </div>
         </div>
 
         {/* sessionStorage section */}
-        <div className="card bg-base-200">
-          <div className="card-body p-4">
-            <h2 className="card-title text-lg">sessionStorage (Per-Session)</h2>
-            <p className="text-xs text-base-content/60">Data cleared when tab closes. Each tab is independent.</p>
-            <p className="text-sm break-all">Value: {sessionData || "(empty)"}</p>
-            <div className="card-actions flex-wrap gap-1">
-              <button className="btn btn-sm btn-primary" onClick={writeToSessionStorage}>Write</button>
-              <button className="btn btn-sm btn-secondary" onClick={readFromSessionStorage}>Read</button>
-            </div>
+        <div style={{ border: "1px solid #ccc", borderRadius: "8px", padding: "16px" }}>
+          <h2 style={{ fontSize: "18px", marginBottom: "8px" }}>sessionStorage (Per-Session)</h2>
+          <p style={{ fontSize: "12px", color: "#666" }}>Data cleared when tab closes. Each tab is independent.</p>
+          <p style={{ fontSize: "14px", wordBreak: "break-all", marginTop: "8px" }}>Value: {sessionData || "(empty)"}</p>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: "4px", marginTop: "12px" }}>
+            <button onClick={writeToSessionStorage}>Write</button>
+            <button onClick={readFromSessionStorage}>Read</button>
           </div>
         </div>
       </div>
 
-      <button className="btn btn-outline btn-sm mb-4" onClick={storageQuotaEstimation}>Check Storage Quota</button>
+      <button onClick={storageQuotaEstimation} style={{ marginBottom: "12px" }}>Check Storage Quota</button>
 
       {storageLog.length > 0 && (
-        <div className="mockup-code"><pre className="px-4 py-2 text-sm max-h-48 overflow-y-auto">{storageLog.map((l, i) => <div key={i}>{l}</div>)}</pre></div>
+        <pre style={{ backgroundColor: "#1e1e2e", color: "#cdd6f4", padding: "12px", borderRadius: "8px", fontSize: "14px", maxHeight: "200px", overflow: "auto" }}>
+          {storageLog.map((l, i) => <div key={i}>{l}</div>)}
+        </pre>
       )}
 
-      <a href="https://developer.mozilla.org/en-US/docs/Web/API/Storage" target="_blank" rel="noopener noreferrer" className="link link-primary mt-4 inline-block">MDN: Storage API</a>
+      <a href="https://developer.mozilla.org/en-US/docs/Web/API/Storage" target="_blank" rel="noopener noreferrer">MDN: Storage API</a>
     </main>
   );
 }

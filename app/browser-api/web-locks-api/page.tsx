@@ -178,26 +178,27 @@ export default function Page() {
   };
 
   return (
-    <main className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-4">Web Locks API</h1>
-      <div className="alert alert-warning mb-4">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="w-6 h-6 stroke-current shrink-0"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
-        <span>Requires secure context (HTTPS/localhost). Open DevTools Console. Locks coordinate across tabs of same origin.</span>
+    <main>
+      <h1>Web Locks API</h1>
+      <div style={{ padding: "12px", border: "1px solid #e67e22", borderRadius: "8px", backgroundColor: "#fef5e7", marginBottom: "16px" }}>
+        <p><strong>⚠️</strong> Requires secure context (HTTPS/localhost). Open DevTools Console. Locks coordinate across tabs of same origin.</p>
       </div>
-      <div className="space-y-4">
-        <p>Status: <span className="badge badge-outline">{status}</span></p>
-        <div className="flex flex-wrap gap-2">
-          <button className="btn btn-primary" onClick={basicLock}>Acquire Exclusive Lock</button>
-          <button className="btn btn-secondary" onClick={sharedLock}>Acquire Shared Lock</button>
-          <button className="btn btn-accent" onClick={exclusiveLockWithCondition}>Conditional Lock</button>
-          <button className="btn btn-ghost" onClick={queryLocks}>Query Locks</button>
-          <button className="btn btn-outline" onClick={crossTabDemo}>Cross-Tab Counter</button>
+      <div>
+        <p>Status: <span style={{ display: "inline-block", padding: "2px 8px", border: "1px solid #ccc", borderRadius: "4px", fontSize: "14px" }}>{status}</span></p>
+        <div style={{ display: "flex", flexWrap: "wrap", gap: "8px", marginTop: "12px" }}>
+          <button onClick={basicLock}>Acquire Exclusive Lock</button>
+          <button onClick={sharedLock}>Acquire Shared Lock</button>
+          <button onClick={exclusiveLockWithCondition}>Conditional Lock</button>
+          <button onClick={queryLocks}>Query Locks</button>
+          <button onClick={crossTabDemo}>Cross-Tab Counter</button>
         </div>
         {lockLog.length > 0 && (
-          <div className="mockup-code"><pre className="px-4 py-2 text-sm max-h-64 overflow-y-auto">{lockLog.map((l, i) => <div key={i}>{l}</div>)}</pre></div>
+          <pre style={{ backgroundColor: "#1e1e2e", color: "#cdd6f4", padding: "12px", borderRadius: "8px", fontSize: "14px", maxHeight: "260px", overflow: "auto", marginTop: "12px" }}>
+            {lockLog.map((l, i) => <div key={i}>{l}</div>)}
+          </pre>
         )}
       </div>
-      <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Locks_API" target="_blank" rel="noopener noreferrer" className="link link-primary mt-4 inline-block">MDN: Web Locks API</a>
+      <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Locks_API" target="_blank" rel="noopener noreferrer">MDN: Web Locks API</a>
     </main>
   );
 }

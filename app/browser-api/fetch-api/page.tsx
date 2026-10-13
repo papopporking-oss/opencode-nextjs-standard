@@ -217,29 +217,30 @@ export default function Page() {
   };
 
   return (
-    <main className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-4">Fetch API</h1>
-      <div className="alert alert-info mb-4">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="w-6 h-6 stroke-current shrink-0"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-        <span>Open DevTools Console to see fetch requests, responses, headers, and parsed data. Uses public JSONPlaceholder API.</span>
+    <main>
+      <h1>Fetch API</h1>
+      <div style={{ padding: "12px", border: "1px solid #3498db", borderRadius: "8px", backgroundColor: "#eaf2f8", marginBottom: "16px" }}>
+        <p>Open DevTools Console to see fetch requests, responses, headers, and parsed data. Uses public JSONPlaceholder API.</p>
       </div>
-      <div className="space-y-4">
-        {loading && <div className="loading loading-spinner"/>}
-        <p className="text-sm text-base-content/60">Status: {loading || "Idle"}</p>
-        <div className="flex flex-wrap gap-2">
-          <button className="btn btn-primary" onClick={basicGet}>GET Request</button>
-          <button className="btn btn-secondary" onClick={postRequest}>POST Request</button>
-          <button className="btn btn-accent" onClick={putRequest}>PUT Request</button>
-          <button className="btn btn-error" onClick={deleteRequest}>DELETE Request</button>
-          <button className="btn btn-warning" onClick={errorHandling}>Error Handling</button>
-          <button className="btn btn-ghost" onClick={abortRequest}>Test Abort</button>
-          <button className="btn btn-outline" onClick={uploadFile}>Upload File</button>
+      <div>
+        {loading && <p style={{ fontStyle: "italic" }}>Loading: {loading}</p>}
+        <p style={{ fontSize: "14px", color: "#666" }}>Status: {loading || "Idle"}</p>
+        <div style={{ display: "flex", flexWrap: "wrap", gap: "8px", marginTop: "12px" }}>
+          <button onClick={basicGet}>GET Request</button>
+          <button onClick={postRequest}>POST Request</button>
+          <button onClick={putRequest}>PUT Request</button>
+          <button onClick={deleteRequest} style={{ color: "#e74c3c" }}>DELETE Request</button>
+          <button onClick={errorHandling}>Error Handling</button>
+          <button onClick={abortRequest}>Test Abort</button>
+          <button onClick={uploadFile}>Upload File</button>
         </div>
         {results.length > 0 && (
-          <div className="mockup-code"><pre className="px-4 py-2 text-sm max-h-64 overflow-y-auto">{results.map((r, i) => <div key={i}>{r}</div>)}</pre></div>
+          <pre style={{ backgroundColor: "#1e1e2e", color: "#cdd6f4", padding: "12px", borderRadius: "8px", fontSize: "14px", maxHeight: "260px", overflow: "auto", marginTop: "12px" }}>
+            {results.map((r, i) => <div key={i}>{r}</div>)}
+          </pre>
         )}
       </div>
-      <a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API" target="_blank" rel="noopener noreferrer" className="link link-primary mt-4 inline-block">MDN: Fetch API</a>
+      <a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API" target="_blank" rel="noopener noreferrer">MDN: Fetch API</a>
     </main>
   );
 }

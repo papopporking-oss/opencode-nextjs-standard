@@ -30,18 +30,16 @@ const apis = [
 
 export default function Page() {
   return (
-    <main className="container mx-auto px-4 py-8">
-      <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold mb-4">Browser API Examples</h1>
-        <p className="text-base-content/60 max-w-2xl mx-auto">Interactive demonstrations of 25 browser APIs with detailed comments and console output. Open DevTools to see the results.</p>
+    <main style={{ maxWidth: "1200px", margin: "0 auto", padding: "32px 16px" }}>
+      <div style={{ textAlign: "center", marginBottom: "48px" }}>
+        <h1 style={{ fontSize: "2.25rem", fontWeight: "bold", marginBottom: "12px" }}>Browser API Examples</h1>
+        <p style={{ color: "#666", maxWidth: "672px", margin: "0 auto" }}>Interactive demonstrations of 25 browser APIs with detailed comments and console output. Open DevTools to see the results.</p>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: "16px" }}>
         {apis.map((api) => (
-          <Link key={api.href} href={api.href} className="card bg-base-200 hover:bg-base-300 transition-colors">
-            <div className="card-body p-5">
-              <h2 className="card-title text-lg">{api.name}</h2>
-              <p className="text-sm text-base-content/60">{api.desc}</p>
-            </div>
+          <Link key={api.href} href={api.href} style={{ display: "block", padding: "20px", border: "1px solid #e5e7eb", borderRadius: "12px", textDecoration: "none", color: "inherit", backgroundColor: "#f9fafb", transition: "background-color 0.15s" }}>
+            <h2 style={{ fontSize: "1.1rem", fontWeight: "600", marginBottom: "4px" }}>{api.name}</h2>
+            <p style={{ fontSize: "0.875rem", color: "#666" }}>{api.desc}</p>
           </Link>
         ))}
       </div>

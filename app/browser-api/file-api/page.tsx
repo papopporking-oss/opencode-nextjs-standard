@@ -107,26 +107,25 @@ export default function Page() {
   };
 
   return (
-    <main className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-4">File API</h1>
-      <div className="alert alert-info mb-4">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="w-6 h-6 stroke-current shrink-0"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-        <span>Select a text file and open DevTools Console to see file metadata and content.</span>
+    <main>
+      <h1>File API</h1>
+      <div style={{ padding: "12px", border: "1px solid #3498db", borderRadius: "8px", backgroundColor: "#eaf2f8", marginBottom: "16px" }}>
+        <p>Select a text file and open DevTools Console to see file metadata and content.</p>
       </div>
-      <div className="space-y-4">
-        <fieldset className="fieldset">
-          <legend className="fieldset-legend">Choose a file</legend>
-          <input type="file" className="file-input" onChange={handleFileSelect}/>
+      <div>
+        <fieldset style={{ border: "1px solid #ccc", padding: "12px", borderRadius: "8px", marginBottom: "12px" }}>
+          <legend>Choose a file</legend>
+          <input type="file" onChange={handleFileSelect}/>
         </fieldset>
-        <button className="btn btn-outline" onClick={handleCreateBlob}>Create & Download Blob</button>
+        <button onClick={handleCreateBlob} style={{ marginBottom: "12px" }}>Create and Download Blob</button>
         {fileInfo.length > 0 && (
-          <div className="mockup-code"><pre className="px-4 py-2 text-sm">{fileInfo.join("\n")}</pre></div>
+          <pre style={{ backgroundColor: "#1e1e2e", color: "#cdd6f4", padding: "12px", borderRadius: "8px", fontSize: "14px", overflow: "auto" }}>{fileInfo.join("\n")}</pre>
         )}
         {fileContent && (
-          <div className="mockup-code"><pre className="px-4 py-2 text-sm whitespace-pre-wrap max-h-48 overflow-y-auto">{fileContent}</pre></div>
+          <pre style={{ backgroundColor: "#1e1e2e", color: "#cdd6f4", padding: "12px", borderRadius: "8px", fontSize: "14px", maxHeight: "200px", overflow: "auto", whiteSpace: "pre-wrap" }}>{fileContent}</pre>
         )}
       </div>
-      <a href="https://developer.mozilla.org/en-US/docs/Web/API/File_API" target="_blank" rel="noopener noreferrer" className="link link-primary mt-4 inline-block">MDN: File API</a>
+      <a href="https://developer.mozilla.org/en-US/docs/Web/API/File_API" target="_blank" rel="noopener noreferrer">MDN: File API</a>
     </main>
   );
 }

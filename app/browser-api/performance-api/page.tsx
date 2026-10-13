@@ -140,16 +140,15 @@ export default function Page() {
   }, []);
 
   return (
-    <main className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-4">Performance API</h1>
-      <div className="alert alert-info mb-4">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="w-6 h-6 stroke-current shrink-0"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-        <span>Open DevTools Console to see timing metrics, marks, measures, and resource timings.</span>
+    <main>
+      <h1>Performance API</h1>
+      <div style={{ padding: "12px", border: "1px solid #3498db", borderRadius: "8px", backgroundColor: "#eaf2f8", marginBottom: "16px" }}>
+        <p>Open DevTools Console to see timing metrics, marks, measures, and resource timings.</p>
       </div>
-      <div className="space-y-4">
-        <p className="text-sm text-base-content/60">Navigation, resource, paint timings + user-defined marks/measures are logged in console.</p>
+      <div>
+        <p style={{ fontSize: "14px", color: "#666" }}>Navigation, resource, paint timings + user-defined marks/measures are logged in console.</p>
       </div>
-      <a href="https://developer.mozilla.org/en-US/docs/Web/API/Performance_API" target="_blank" rel="noopener noreferrer" className="link link-primary mt-4 inline-block">MDN: Performance API</a>
+      <a href="https://developer.mozilla.org/en-US/docs/Web/API/Performance_API" target="_blank" rel="noopener noreferrer">MDN: Performance API</a>
     </main>
   );
 }

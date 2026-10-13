@@ -113,21 +113,20 @@ export default function Page() {
   };
 
   return (
-    <main className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-4">Notifications API</h1>
-      <div className="alert alert-info mb-4">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="w-6 h-6 stroke-current shrink-0"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-        <span>Open DevTools Console to see results. Click buttons to trigger notifications. Requires permission.</span>
+    <main>
+      <h1>Notifications API</h1>
+      <div style={{ padding: "12px", border: "1px solid #3498db", borderRadius: "8px", backgroundColor: "#eaf2f8", marginBottom: "16px" }}>
+        <p>Open DevTools Console to see results. Click buttons to trigger notifications. Requires permission.</p>
       </div>
-      <div className="space-y-4">
-        <div className="flex flex-wrap items-center gap-2">
-          <span className="badge badge-outline">Permission: {permission}</span>
-          <button className="btn btn-primary" onClick={requestPermission}>Request Permission</button>
-          <button className="btn btn-secondary" onClick={showBasicNotification}>Show Basic Notification</button>
-          <button className="btn btn-accent" onClick={showRichNotification}>Show Rich Notification</button>
+      <div>
+        <div style={{ display: "flex", flexWrap: "wrap", gap: "8px", alignItems: "center", marginBottom: "16px" }}>
+          <span style={{ display: "inline-block", padding: "2px 8px", border: "1px solid #ccc", borderRadius: "4px", fontSize: "14px" }}>Permission: {permission}</span>
+          <button onClick={requestPermission}>Request Permission</button>
+          <button onClick={showBasicNotification}>Show Basic Notification</button>
+          <button onClick={showRichNotification}>Show Rich Notification</button>
         </div>
       </div>
-      <a href="https://developer.mozilla.org/en-US/docs/Web/API/Notifications_API" target="_blank" rel="noopener noreferrer" className="link link-primary mt-4 inline-block">MDN: Notifications API</a>
+      <a href="https://developer.mozilla.org/en-US/docs/Web/API/Notifications_API" target="_blank" rel="noopener noreferrer">MDN: Notifications API</a>
     </main>
   );
 }

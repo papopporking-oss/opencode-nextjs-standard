@@ -76,15 +76,14 @@ export default function Page() {
   }, []);
 
   return (
-    <main className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-4">Geolocation API</h1>
-      <div className="alert alert-info">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="w-6 h-6 stroke-current shrink-0"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-        <span>Open DevTools Console to see geolocation output. You will be prompted to allow location access.</span>
+    <main>
+      <h1>Geolocation API</h1>
+      <div style={{ padding: "12px", border: "1px solid #3498db", borderRadius: "8px", backgroundColor: "#eaf2f8", marginBottom: "16px" }}>
+        <p>Open DevTools Console to see geolocation output. You will be prompted to allow location access.</p>
       </div>
-      <div className="mt-4 space-y-2">
+      <div>
         <p>Uses <code>navigator.geolocation.getCurrentPosition()</code> and <code>navigator.geolocation.watchPosition()</code></p>
-        <a href="https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API" target="_blank" rel="noopener noreferrer" className="link link-primary">MDN: Geolocation API</a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API" target="_blank" rel="noopener noreferrer">MDN: Geolocation API</a>
       </div>
     </main>
   );

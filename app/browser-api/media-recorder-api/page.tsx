@@ -193,29 +193,28 @@ export default function Page() {
   };
 
   return (
-    <main className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-4">MediaRecorder API</h1>
-      <div className="alert alert-info mb-4">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="w-6 h-6 stroke-current shrink-0"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-        <span>Requires secure context + microphone permission. Open DevTools Console. Speak into microphone to record.</span>
+    <main>
+      <h1>MediaRecorder API</h1>
+      <div style={{ padding: "12px", border: "1px solid #3498db", borderRadius: "8px", backgroundColor: "#eaf2f8", marginBottom: "16px" }}>
+        <p>Requires secure context + microphone permission. Open DevTools Console. Speak into microphone to record.</p>
       </div>
-      <div className="space-y-4">
-        <p>Status: <span className="badge badge-outline">{status}</span></p>
-        <div className="flex flex-wrap gap-2">
-          <button className="btn btn-primary" onClick={startRecording}>Start Recording</button>
-          <button className="btn btn-error" onClick={stopRecording}>Stop</button>
-          <button className="btn btn-secondary" onClick={pauseRecording}>Pause</button>
-          <button className="btn btn-accent" onClick={resumeRecording}>Resume</button>
-          <button className="btn btn-ghost" onClick={requestDataNow}>Request Data</button>
+      <div>
+        <p>Status: <span style={{ display: "inline-block", padding: "2px 8px", border: "1px solid #ccc", borderRadius: "4px", fontSize: "14px" }}>{status}</span></p>
+        <div style={{ display: "flex", flexWrap: "wrap", gap: "8px", marginTop: "12px" }}>
+          <button onClick={startRecording}>Start Recording</button>
+          <button onClick={stopRecording} style={{ color: "#e74c3c" }}>Stop</button>
+          <button onClick={pauseRecording}>Pause</button>
+          <button onClick={resumeRecording}>Resume</button>
+          <button onClick={requestDataNow}>Request Data</button>
         </div>
         {recordingUrl && (
-          <div>
-            <audio src={recordingUrl} controls className="w-full max-w-md"/>
-            <p className="text-xs mt-1">Recorded audio playback</p>
+          <div style={{ marginTop: "12px" }}>
+            <audio src={recordingUrl} controls style={{ width: "100%", maxWidth: "448px" }}/>
+            <p style={{ fontSize: "12px", marginTop: "4px" }}>Recorded audio playback</p>
           </div>
         )}
       </div>
-      <a href="https://developer.mozilla.org/en-US/docs/Web/API/MediaRecorder" target="_blank" rel="noopener noreferrer" className="link link-primary mt-4 inline-block">MDN: MediaRecorder API</a>
+      <a href="https://developer.mozilla.org/en-US/docs/Web/API/MediaRecorder" target="_blank" rel="noopener noreferrer">MDN: MediaRecorder API</a>
     </main>
   );
 }

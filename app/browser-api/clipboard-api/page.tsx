@@ -102,23 +102,22 @@ export default function Page() {
   };
 
   return (
-    <main className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-4">Clipboard API</h1>
-      <div className="alert alert-info mb-4">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="w-6 h-6 stroke-current shrink-0"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-        <span>Requires secure context (HTTPS or localhost). Open DevTools Console to see results. Paste may require permission.</span>
+    <main>
+      <h1>Clipboard API</h1>
+      <div style={{ padding: "12px", border: "1px solid #3498db", borderRadius: "8px", backgroundColor: "#eaf2f8", marginBottom: "16px" }}>
+        <p>Requires secure context (HTTPS or localhost). Open DevTools Console to see results. Paste may require permission.</p>
       </div>
-      <div className="space-y-4">
-        <div className="flex flex-wrap gap-2">
-          <button className="btn btn-primary" onClick={handleCopy}>Copy Text</button>
-          <button className="btn btn-secondary" onClick={handlePaste}>Paste Text</button>
-          <button className="btn btn-accent" onClick={handleCopyImage}>Copy Image</button>
-          <button className="btn btn-ghost" onClick={handleReadClipboardContents}>Read Clipboard</button>
+      <div>
+        <div style={{ display: "flex", flexWrap: "wrap", gap: "8px", marginBottom: "16px" }}>
+          <button onClick={handleCopy}>Copy Text</button>
+          <button onClick={handlePaste}>Paste Text</button>
+          <button onClick={handleCopyImage}>Copy Image</button>
+          <button onClick={handleReadClipboardContents}>Read Clipboard</button>
         </div>
-        {copiedText && <div className="mockup-code"><pre className="px-4 py-2 text-sm">Copied: {copiedText}</pre></div>}
-        {pasteText && <div className="mockup-code"><pre className="px-4 py-2 text-sm">Pasted: {pasteText}</pre></div>}
+        {copiedText && <pre style={{ backgroundColor: "#1e1e2e", color: "#cdd6f4", padding: "12px", borderRadius: "8px", fontSize: "14px" }}>Copied: {copiedText}</pre>}
+        {pasteText && <pre style={{ backgroundColor: "#1e1e2e", color: "#cdd6f4", padding: "12px", borderRadius: "8px", fontSize: "14px" }}>Pasted: {pasteText}</pre>}
       </div>
-      <a href="https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API" target="_blank" rel="noopener noreferrer" className="link link-primary mt-4 inline-block">MDN: Clipboard API</a>
+      <a href="https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API" target="_blank" rel="noopener noreferrer">MDN: Clipboard API</a>
     </main>
   );
 }

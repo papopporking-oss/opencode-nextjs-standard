@@ -199,74 +199,80 @@ export default function Page() {
   };
 
   return (
-    <main className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-4">Drag and Drop API</h1>
-      <div className="alert alert-info mb-4">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="w-6 h-6 stroke-current shrink-0"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-        <span>Open DevTools Console. Drag the items below into the drop zones. Drop files from desktop onto the file zone.</span>
+    <main>
+      <h1>Drag and Drop API</h1>
+      <div style={{ padding: "12px", border: "1px solid #3498db", borderRadius: "8px", backgroundColor: "#eaf2f8", marginBottom: "16px" }}>
+        <p>Open DevTools Console. Drag the items below into the drop zones. Drop files from desktop onto the file zone.</p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "24px", marginBottom: "24px" }}>
         {/* Draggable items */}
         <div>
-          <h2 className="text-lg font-semibold mb-3">Draggable Items</h2>
-          <p className="text-xs text-base-content/60 mb-3">Drag these items to the drop zones (requires draggable=true)</p>
-          <div className="space-y-2">
-            <div id="item-alpha" draggable={true} className="card bg-primary text-primary-content cursor-grab active:cursor-grabbing select-none" onDragStart={handleDragStart} onDrag={handleDrag} onDragEnd={handleDragEnd}>
-              <div className="card-body p-3"><p className="font-medium">Item Alpha</p><p className="text-xs opacity-75">Draggable card</p></div>
+          <h2 style={{ fontSize: "18px", fontWeight: "bold", marginBottom: "12px" }}>Draggable Items</h2>
+          <p style={{ fontSize: "12px", color: "#666", marginBottom: "12px" }}>Drag these items to the drop zones (requires draggable=true)</p>
+          <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
+            <div id="item-alpha" draggable={true} style={{ padding: "12px", borderRadius: "8px", backgroundColor: "#3498db", color: "white", cursor: "grab", userSelect: "none" }} onDragStart={handleDragStart} onDrag={handleDrag} onDragEnd={handleDragEnd}>
+              <p style={{ fontWeight: "500" }}>Item Alpha</p>
+              <p style={{ fontSize: "12px", opacity: 0.75 }}>Draggable card</p>
             </div>
-            <div id="item-beta" draggable={true} className="card bg-secondary text-secondary-content cursor-grab active:cursor-grabbing select-none" onDragStart={handleDragStart} onDrag={handleDrag} onDragEnd={handleDragEnd}>
-              <div className="card-body p-3"><p className="font-medium">Item Beta</p><p className="text-xs opacity-75">Draggable card</p></div>
+            <div id="item-beta" draggable={true} style={{ padding: "12px", borderRadius: "8px", backgroundColor: "#2ecc71", color: "white", cursor: "grab", userSelect: "none" }} onDragStart={handleDragStart} onDrag={handleDrag} onDragEnd={handleDragEnd}>
+              <p style={{ fontWeight: "500" }}>Item Beta</p>
+              <p style={{ fontSize: "12px", opacity: 0.75 }}>Draggable card</p>
             </div>
-            <div id="item-gamma" draggable={true} className="card bg-accent text-accent-content cursor-grab active:cursor-grabbing select-none" onDragStart={handleDragStart} onDrag={handleDrag} onDragEnd={handleDragEnd}>
-              <div className="card-body p-3"><p className="font-medium">Item Gamma</p><p className="text-xs opacity-75">Draggable card</p></div>
+            <div id="item-gamma" draggable={true} style={{ padding: "12px", borderRadius: "8px", backgroundColor: "#e74c3c", color: "white", cursor: "grab", userSelect: "none" }} onDragStart={handleDragStart} onDrag={handleDrag} onDragEnd={handleDragEnd}>
+              <p style={{ fontWeight: "500" }}>Item Gamma</p>
+              <p style={{ fontSize: "12px", opacity: 0.75 }}>Draggable card</p>
             </div>
           </div>
         </div>
 
         {/* Drop zones */}
         <div>
-          <h2 className="text-lg font-semibold mb-3">Drop Zones</h2>
-          <p className="text-xs text-base-content/60 mb-3">Drop draggable items here</p>
-          <div className="space-y-3">
-            <div id="zone-1" className="border-2 border-dashed border-gray-400 rounded-lg p-6 text-center transition-colors" onDragEnter={handleDragEnter} onDragOver={handleDragOver} onDragLeave={handleDragLeave} onDrop={handleDrop}>
-              <p className="text-sm font-medium">Drop Zone 1</p>
-              <p className="text-xs text-base-content/60">Drop items here</p>
+          <h2 style={{ fontSize: "18px", fontWeight: "bold", marginBottom: "12px" }}>Drop Zones</h2>
+          <p style={{ fontSize: "12px", color: "#666", marginBottom: "12px" }}>Drop draggable items here</p>
+          <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
+            <div id="zone-1" style={{ border: "2px dashed #999", borderRadius: "8px", padding: "24px", textAlign: "center" }} onDragEnter={handleDragEnter} onDragOver={handleDragOver} onDragLeave={handleDragLeave} onDrop={handleDrop}>
+              <p style={{ fontSize: "14px", fontWeight: "500" }}>Drop Zone 1</p>
+              <p style={{ fontSize: "12px", color: "#666" }}>Drop items here</p>
             </div>
-            <div id="zone-2" className="border-2 border-dashed border-gray-400 rounded-lg p-6 text-center transition-colors" onDragEnter={handleDragEnter} onDragOver={handleDragOver} onDragLeave={handleDragLeave} onDrop={handleDrop}>
-              <p className="text-sm font-medium">Drop Zone 2</p>
-              <p className="text-xs text-base-content/60">Drop items here</p>
+            <div id="zone-2" style={{ border: "2px dashed #999", borderRadius: "8px", padding: "24px", textAlign: "center" }} onDragEnter={handleDragEnter} onDragOver={handleDragOver} onDragLeave={handleDragLeave} onDrop={handleDrop}>
+              <p style={{ fontSize: "14px", fontWeight: "500" }}>Drop Zone 2</p>
+              <p style={{ fontSize: "12px", color: "#666" }}>Drop items here</p>
             </div>
           </div>
         </div>
       </div>
 
       {/* File drop zone */}
-      <div className="mt-6">
-        <h2 className="text-lg font-semibold mb-3">File Drop Zone</h2>
-        <p className="text-xs text-base-content/60 mb-3">Drop files from your desktop here (text files will be read)</p>
-        <div id="file-zone" className="border-2 border-dashed border-success rounded-lg p-8 text-center transition-colors" onDragOver={handleFileDragOver} onDragLeave={handleFileDragLeave} onDrop={handleFileDrop}>
-          <p className="text-sm font-medium text-success">📁 Drop files from your computer here</p>
-          <p className="text-xs text-base-content/60">Supported: any file type</p>
+      <div style={{ marginTop: "24px" }}>
+        <h2 style={{ fontSize: "18px", fontWeight: "bold", marginBottom: "12px" }}>File Drop Zone</h2>
+        <p style={{ fontSize: "12px", color: "#666", marginBottom: "12px" }}>Drop files from your desktop here (text files will be read)</p>
+        <div id="file-zone" style={{ border: "2px dashed #2ecc71", borderRadius: "8px", padding: "32px", textAlign: "center" }} onDragOver={handleFileDragOver} onDragLeave={handleFileDragLeave} onDrop={handleFileDrop}>
+          <p style={{ fontSize: "14px", fontWeight: "500", color: "#2ecc71" }}>📁 Drop files from your computer here</p>
+          <p style={{ fontSize: "12px", color: "#666" }}>Supported: any file type</p>
         </div>
       </div>
 
       {/* Logs */}
       {droppedItems.length > 0 && (
-        <div className="mt-6">
-          <h2 className="text-lg font-semibold mb-2">Dropped Items</h2>
-          <div className="mockup-code"><pre className="px-4 py-2 text-sm max-h-32 overflow-y-auto">{droppedItems.map((item, i) => <div key={i}>{item}</div>)}</pre></div>
+        <div style={{ marginTop: "24px" }}>
+          <h2 style={{ fontSize: "18px", fontWeight: "bold", marginBottom: "8px" }}>Dropped Items</h2>
+          <pre style={{ backgroundColor: "#1e1e2e", color: "#cdd6f4", padding: "12px", borderRadius: "8px", fontSize: "14px", maxHeight: "130px", overflow: "auto" }}>
+            {droppedItems.map((item, i) => <div key={i}>{item}</div>)}
+          </pre>
         </div>
       )}
 
       {dragLog.length > 0 && (
-        <div className="mt-4">
-          <h2 className="text-lg font-semibold mb-2">Event Log</h2>
-          <div className="mockup-code"><pre className="px-4 py-2 text-sm max-h-48 overflow-y-auto">{dragLog.map((l, i) => <div key={i}>{l}</div>)}</pre></div>
+        <div style={{ marginTop: "16px" }}>
+          <h2 style={{ fontSize: "18px", fontWeight: "bold", marginBottom: "8px" }}>Event Log</h2>
+          <pre style={{ backgroundColor: "#1e1e2e", color: "#cdd6f4", padding: "12px", borderRadius: "8px", fontSize: "14px", maxHeight: "200px", overflow: "auto" }}>
+            {dragLog.map((l, i) => <div key={i}>{l}</div>)}
+          </pre>
         </div>
       )}
 
-      <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API" target="_blank" rel="noopener noreferrer" className="link link-primary mt-6 inline-block">MDN: Drag and Drop API</a>
+      <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API" target="_blank" rel="noopener noreferrer">MDN: Drag and Drop API</a>
     </main>
   );
 }

@@ -9,3 +9,12 @@ npm install react-markdown remark-gfm
 npm install echarts
 npm install @observablehq/plot
 npm install d3
+
+# API
+npm i axios
+
+# Datetime format
+npm i dayjs
+
+# Type validation
+npm i zod

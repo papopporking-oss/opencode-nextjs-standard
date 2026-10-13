@@ -280,26 +280,27 @@ export default function Page() {
   };
 
   return (
-    <main className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-4">Web Crypto API</h1>
-      <div className="alert alert-warning mb-4">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="w-6 h-6 stroke-current shrink-0"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
-        <span>Requires HTTPS/localhost for crypto.subtle. getRandomValues works in any context. Open DevTools Console.</span>
+    <main>
+      <h1>Web Crypto API</h1>
+      <div style={{ padding: "12px", border: "1px solid #e67e22", borderRadius: "8px", backgroundColor: "#fef5e7", marginBottom: "16px" }}>
+        <p><strong>⚠️</strong> Requires HTTPS/localhost for crypto.subtle. getRandomValues works in any context. Open DevTools Console.</p>
       </div>
-      <div className="space-y-4">
-        <div className="flex flex-wrap gap-2">
-          <button className="btn btn-primary" onClick={randomNumbers}>Random Numbers & UUID</button>
-          <button className="btn btn-secondary" onClick={hashing}>SHA-256 Hashing</button>
-          <button className="btn btn-accent" onClick={encryptDecrypt}>AES-GCM Encrypt/Decrypt</button>
-          <button className="btn btn-info" onClick={generateKey}>Generate AES Key</button>
-          <button className="btn btn-success" onClick={generateRSAKeyPair}>RSA Key Pair & Sign</button>
-          <button className="btn btn-warning" onClick={hmacSigning}>HMAC Sign/Verify</button>
+      <div>
+        <div style={{ display: "flex", flexWrap: "wrap", gap: "8px", marginBottom: "12px" }}>
+          <button onClick={randomNumbers}>Random Numbers & UUID</button>
+          <button onClick={hashing}>SHA-256 Hashing</button>
+          <button onClick={encryptDecrypt}>AES-GCM Encrypt/Decrypt</button>
+          <button onClick={generateKey}>Generate AES Key</button>
+          <button onClick={generateRSAKeyPair}>RSA Key Pair & Sign</button>
+          <button onClick={hmacSigning}>HMAC Sign/Verify</button>
         </div>
         {log.length > 0 && (
-          <div className="mockup-code"><pre className="px-4 py-2 text-sm max-h-64 overflow-y-auto">{log.map((l, i) => <div key={i}>{l}</div>)}</pre></div>
+          <pre style={{ backgroundColor: "#1e1e2e", color: "#cdd6f4", padding: "12px", borderRadius: "8px", fontSize: "14px", maxHeight: "260px", overflow: "auto" }}>
+            {log.map((l, i) => <div key={i}>{l}</div>)}
+          </pre>
         )}
       </div>
-      <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Crypto_API" target="_blank" rel="noopener noreferrer" className="link link-primary mt-4 inline-block">MDN: Web Crypto API</a>
+      <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Crypto_API" target="_blank" rel="noopener noreferrer">MDN: Web Crypto API</a>
     </main>
   );
 }

@@ -182,23 +182,24 @@ export default function Page() {
   };
 
   return (
-    <main className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-4">Web Workers API</h1>
-      <div className="alert alert-info mb-4">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="w-6 h-6 stroke-current shrink-0"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-        <span>Open DevTools Console. Worker runs in a separate thread. Console.log from workers appears in browser console.</span>
+    <main>
+      <h1>Web Workers API</h1>
+      <div style={{ padding: "12px", border: "1px solid #3498db", borderRadius: "8px", backgroundColor: "#eaf2f8", marginBottom: "16px" }}>
+        <p>Open DevTools Console. Worker runs in a separate thread. Console.log from workers appears in browser console.</p>
       </div>
-      <div className="space-y-4">
-        <p>Status: <span className="badge badge-outline">{workerStatus}</span></p>
-        <div className="flex flex-wrap gap-2">
-          <button className="btn btn-primary" onClick={runDedicatedWorker}>Run Dedicated Worker</button>
-          <button className="btn btn-secondary" onClick={runSharedWorkerDemo}>Run Shared Worker</button>
+      <div>
+        <p>Status: <span style={{ display: "inline-block", padding: "2px 8px", border: "1px solid #ccc", borderRadius: "4px", fontSize: "14px" }}>{workerStatus}</span></p>
+        <div style={{ display: "flex", flexWrap: "wrap", gap: "8px", marginTop: "12px" }}>
+          <button onClick={runDedicatedWorker}>Run Dedicated Worker</button>
+          <button onClick={runSharedWorkerDemo}>Run Shared Worker</button>
         </div>
         {workerResults.length > 0 && (
-          <div className="mockup-code"><pre className="px-4 py-2 text-sm max-h-48 overflow-y-auto">{workerResults.map((r, i) => <div key={i}>{r}</div>)}</pre></div>
+          <pre style={{ backgroundColor: "#1e1e2e", color: "#cdd6f4", padding: "12px", borderRadius: "8px", fontSize: "14px", maxHeight: "200px", overflow: "auto", marginTop: "12px" }}>
+            {workerResults.map((r, i) => <div key={i}>{r}</div>)}
+          </pre>
         )}
       </div>
-      <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API" target="_blank" rel="noopener noreferrer" className="link link-primary mt-4 inline-block">MDN: Web Workers API</a>
+      <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API" target="_blank" rel="noopener noreferrer">MDN: Web Workers API</a>
     </main>
   );
 }

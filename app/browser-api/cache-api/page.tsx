@@ -117,24 +117,23 @@ export default function Page() {
   }, []);
 
   return (
-    <main className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-4">Cache API</h1>
-      <div className="alert alert-info mb-4">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="w-6 h-6 stroke-current shrink-0"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-        <span>Open DevTools Console. Requires secure context. Cache operations are logged to console.</span>
+    <main>
+      <h1>Cache API</h1>
+      <div style={{ padding: "12px", border: "1px solid #3498db", borderRadius: "8px", backgroundColor: "#eaf2f8", marginBottom: "16px" }}>
+        <p>Open DevTools Console. Requires secure context. Cache operations are logged to console.</p>
       </div>
-      <div className="space-y-4">
-        <p>Status: <span className="badge badge-outline">{cacheStatus}</span></p>
+      <div>
+        <p>Status: <span style={{ display: "inline-block", padding: "2px 8px", border: "1px solid #ccc", borderRadius: "4px", fontSize: "14px" }}>{cacheStatus}</span></p>
         {cachedUrls.length > 0 && (
-          <div>
-            <p className="text-sm font-semibold">Cached URLs:</p>
-            <ul className="list-disc pl-5 text-sm">
-              {cachedUrls.map((url, i) => <li key={i} className="font-mono text-xs break-all">{url}</li>)}
+          <div style={{ marginTop: "12px" }}>
+            <p style={{ fontSize: "14px", fontWeight: "bold" }}>Cached URLs:</p>
+            <ul>
+              {cachedUrls.map((url, i) => <li key={i} style={{ fontFamily: "monospace", fontSize: "12px", wordBreak: "break-all" }}>{url}</li>)}
             </ul>
           </div>
         )}
       </div>
-      <a href="https://developer.mozilla.org/en-US/docs/Web/API/Cache" target="_blank" rel="noopener noreferrer" className="link link-primary mt-4 inline-block">MDN: Cache API</a>
+      <a href="https://developer.mozilla.org/en-US/docs/Web/API/Cache" target="_blank" rel="noopener noreferrer">MDN: Cache API</a>
     </main>
   );
 }
