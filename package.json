@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --experimental-https --experimental-https-key /home/papop/certificate/opencode53.papopporking.com/opencode53.papopporking.com.key --experimental-https-cert /home/papop/certificate/opencode53.papopporking.com/opencode53.papopporking.com.crt --experimental-https-ca /home/papop/.step/certs/root_ca.crt",
     "build": "next build",
     "start": "next start",
     "lint": "eslint"

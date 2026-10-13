@@ -3,8 +3,8 @@
   "shell": "/bin/bash",
   "model": "deepseek-ai/DeepSeek-V4-Pro",
   "default_agent": "build",
-  // "websearch": {
-  //   "provider": "random"
-  // }
-  "websearch": false
+  "websearch": {
+    "provider": "random"
+  }
+  // "websearch": false
 }
