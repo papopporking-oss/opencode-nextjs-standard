@@ -9,8 +9,11 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@observablehq/plot": "^0.6.17",
     "@tailwindcss/postcss": "^4.3.3",
+    "d3": "^7.9.0",
     "daisyui": "^5.7.48",
+    "echarts": "^6.1.0",
     "next": "16.4.0",
     "react": "19.3.0",
     "react-dom": "19.3.0",

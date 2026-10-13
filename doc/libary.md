@@ -4,3 +4,8 @@ npm install -D @tailwindcss/typography
 
 # Markdown
 npm install react-markdown remark-gfm
+
+# Visualization Libraries
+npm install echarts
+npm install @observablehq/plot
+npm install d3
