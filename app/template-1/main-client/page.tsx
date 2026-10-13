@@ -1,7 +1,7 @@
-export default function MainClient() {
+export default function Page() {
   return (
-    <>
-      MainClient
-    </>
+    <main>
+
+    </main>
   );
 }
