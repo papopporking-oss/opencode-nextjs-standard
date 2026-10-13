@@ -119,8 +119,8 @@ export default function Page() {
         <p>Open DevTools Console to see results. Click buttons to trigger notifications. Requires permission.</p>
       </div>
       <div>
-        <div>
-          <span>Permission: {permission}</span>
+        <p className="mb-3">Permission: <span className="font-mono text-sm bg-gray-100 px-2 py-0.5 rounded">{permission}</span></p>
+        <div className="flex flex-wrap gap-2 mb-4">
           <button className="px-3 py-1.5 rounded text-sm font-medium bg-gray-100 hover:bg-gray-200 border border-gray-300" onClick={requestPermission}>Request Permission</button>
           <button className="px-3 py-1.5 rounded text-sm font-medium bg-gray-100 hover:bg-gray-200 border border-gray-300" onClick={showBasicNotification}>Show Basic Notification</button>
           <button className="px-3 py-1.5 rounded text-sm font-medium bg-gray-100 hover:bg-gray-200 border border-gray-300" onClick={showRichNotification}>Show Rich Notification</button>

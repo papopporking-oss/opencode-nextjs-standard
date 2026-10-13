@@ -1,4 +1,6 @@
-export default async function Page() {
+import { Suspense } from 'react'
+
+async function PageAsync() {
   const data = await fetch('https://api.vercel.app/blog');
   const posts = await data.json();
   return (
@@ -8,4 +10,13 @@ export default async function Page() {
       ))}
     </ul>
   );
+}
+
+export default async function Page() {
+  return (
+    <Suspense fallback={<></>}>
+      <PageAsync/>
+    </Suspense>
+  );
+  
 }

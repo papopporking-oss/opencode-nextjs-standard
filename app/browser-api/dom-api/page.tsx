@@ -202,10 +202,10 @@ export default function Page() {
 
         <div id="style-target">Style Target — CSS modified via JS</div>
 
-        <div>
-          <button className="demo-btn" onClick={() => console.log("DOM API: Button 1 clicked")}>Button 1</button>
-          <button className="demo-btn" onClick={() => console.log("DOM API: Button 2 clicked")}>Button 2</button>
-          <button className="demo-btn" onClick={() => console.log("DOM API: Button 3 clicked")}>Button 3</button>
+        <div className="flex flex-wrap gap-2 mb-4">
+          <button className="demo-btn px-3 py-1.5 rounded text-sm font-medium bg-gray-100 hover:bg-gray-200 border border-gray-300" onClick={() => console.log("DOM API: Button 1 clicked")}>Button 1</button>
+          <button className="demo-btn px-3 py-1.5 rounded text-sm font-medium bg-gray-100 hover:bg-gray-200 border border-gray-300" onClick={() => console.log("DOM API: Button 2 clicked")}>Button 2</button>
+          <button className="demo-btn px-3 py-1.5 rounded text-sm font-medium bg-gray-100 hover:bg-gray-200 border border-gray-300" onClick={() => console.log("DOM API: Button 3 clicked")}>Button 3</button>
         </div>
 
         <div id="dynamic-content">
