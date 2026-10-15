@@ -4,7 +4,6 @@ const nextConfig: NextConfig = {
   /* config options here */
   cacheComponents: true,
   partialPrefetching: true,
-  skipTrailingSlashRedirect: true,
   images: {
     remotePatterns: [
       {
@@ -22,7 +21,6 @@ const nextConfig: NextConfig = {
       },
     },
   },
-  basePath: '/papop',
 };
 
 export default nextConfig;

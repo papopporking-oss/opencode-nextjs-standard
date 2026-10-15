@@ -78,7 +78,7 @@ without using a dedicated documentation framework.
 
 export default function Page() {
   return (
-    <main className="w-full flex-1 bg-base-300">
+    <main className="w-full flex-1 bg-neutral-content">
       
       <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 xl:grid-cols-1 2xl:grid-cols-1 gap-2 m-2">
 

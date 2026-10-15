@@ -8,8 +8,7 @@ async function PageAsync() {
   const session = await auth0.getSession();
   const user = session?.user;
 
-  // console.log(session)
-  // console.log(user)
+  console.log(session)
 
   return (
     <main>
