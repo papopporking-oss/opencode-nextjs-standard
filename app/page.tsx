@@ -8,8 +8,6 @@ async function PageAsync() {
   const session = await auth0.getSession();
   const user = session?.user;
 
-  console.log(session)
-
   return (
     <main>
       
@@ -81,11 +79,10 @@ async function PageAsync() {
   );
 }
 
-export default async function Page() {
+export default function Page() {
   return (
     <Suspense fallback={<></>}>
       <PageAsync/>
     </Suspense>
   );
-  
 }
