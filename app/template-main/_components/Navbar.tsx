@@ -23,7 +23,7 @@ export default function Navbar() {
         </div>
       </div>
 
-      <div className="flex-1">
+      <div className="flex-1 pl-2">
         <a className="btn btn-ghost">Admin</a>
       </div>
 
