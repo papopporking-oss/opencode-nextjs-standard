@@ -1,0 +1,1 @@
+npm install @auth0/nextjs-auth0
