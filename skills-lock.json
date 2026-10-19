@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "skills": {
+    "component-split": {
+      "source": "blunotech-dev/agents",
+      "sourceType": "github",
+      "skillPath": "frontend/component-split/SKILL.md",
+      "computedHash": "c2c11b4d796d4b996bb54429408986a4fe64ea69236810ef7935b9ae78382d30"
+    },
+    "compound-component": {
+      "source": "blunotech-dev/agents",
+      "sourceType": "github",
+      "skillPath": "frontend/compound-component/SKILL.md",
+      "computedHash": "fd12fd60bde85b6a77cc974d70403fad50d540c04e1b5e663079322960004501"
+    },
+    "context-rerenders-fix": {
+      "source": "blunotech-dev/agents",
+      "sourceType": "github",
+      "skillPath": "frontend/context-rerenders-fix/SKILL.md",
+      "computedHash": "8f867bce7502464b5ecbe0e46c0fbf07a6c96000a50e6cbb0d2ec8b51a18a54a"
+    },
+    "memo-strategy": {
+      "source": "blunotech-dev/agents",
+      "sourceType": "github",
+      "skillPath": "react/memo-strategy/SKILL.md",
+      "computedHash": "152262e56b3ccf2a1055010d8275dca350a3de3193751a1ea3af5066ab42835b"
+    },
+    "polymorphic-component": {
+      "source": "blunotech-dev/agents",
+      "sourceType": "github",
+      "skillPath": "react/polymorphic-component/SKILL.md",
+      "computedHash": "98607917be67bf2bc79d4741e7df4bd953d9099a2783a1393af557025c2bd974"
+    },
+    "prop-drilling-fix": {
+      "source": "blunotech-dev/agents",
+      "sourceType": "github",
+      "skillPath": "frontend/prop-drilling-fix/SKILL.md",
+      "computedHash": "111a210f63987e947a3be1563c0c8e447b756daf78f818b9c835008d7054699f"
+    },
+    "rerenders-audit": {
+      "source": "blunotech-dev/agents",
+      "sourceType": "github",
+      "skillPath": "frontend/rerenders-audit/SKILL.md",
+      "computedHash": "1d31ff42748bd0c8aa2173c315e8505e91fb8df86bab723d52fcd75d8881863a"
+    },
+    "state-colocation": {
+      "source": "blunotech-dev/agents",
+      "sourceType": "github",
+      "skillPath": "react/state-colocation/SKILL.md",
+      "computedHash": "8e207f89165ef0bdbcfa8cf60e3dd24717b1b32bd48f33e0b5ffcbf436a89c09"
+    },
+    "useeffect-cleanup": {
+      "source": "blunotech-dev/agents",
+      "sourceType": "github",
+      "skillPath": "react/useeffect-cleanup/SKILL.md",
+      "computedHash": "e1ad4d37621bb03cc3664d7803d013a709aa96eddd9e5e900d5e7ef2c934a1c6"
+    },
+    "useeffect-dependencies": {
+      "source": "blunotech-dev/agents",
+      "sourceType": "github",
+      "skillPath": "react/useeffect-dependencies/SKILL.md",
+      "computedHash": "ef2df653c41f21bc3cf1c34a930686dc2953a09540dcc887c31d11154121c7c1"
+    }
+  }
+}
