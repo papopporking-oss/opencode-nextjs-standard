@@ -37,7 +37,7 @@ export default function Page() {
       <div>
         <DataTable 
           data={rows} 
-          className="table table-striped table-bordered"
+          className="table table-striped table-bordered table-sm"
         >
           <Column title="Title" data="title" />
           <Column title="Author" data="author" />
