@@ -1,18 +1,1 @@
-@import "tailwindcss";
 
-:root {
-
-}
-
-@theme inline {
-
-}
-
-@media (prefers-color-scheme: dark) {
-
-}
-
-body {
-  padding: 0;
-  margin: 0;
-}
