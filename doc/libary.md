@@ -41,3 +41,9 @@ npm install datatables.net-react
 # Tool
 npm install zod
 npm install dayjs
+
+# visualization
+# npm i plotly.js
+# npm i uplot
+npm install echarts
+# npm install @kitware/vtk.js

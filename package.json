@@ -42,6 +42,7 @@
     "datatables.net-select-bs4": "^4.1.1",
     "datatables.net-select-dt": "^4.1.1",
     "dayjs": "^1.11.23",
+    "echarts": "^6.1.0",
     "next": "16.4.2",
     "react": "19.3.0",
     "react-bootstrap": "^2.10.10",
