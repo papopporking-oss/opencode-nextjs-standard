@@ -19,7 +19,6 @@ export default function Page() {
       <div>
         <button type="button">Click</button>
       </div>
-
       <div>
         <Button variant="primary">Primary</Button>{' '}
         <Button variant="secondary">Secondary</Button>{' '}
